@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streeties - Pet Adoption</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo.png" alt="Streeties Logo" class="logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="adopt.html">Adopt</a>
+                <a href="contact.html">Contact</a>
+                <a href="client_chat.php" class="chat-btn"><i class="fas fa-comments"></i> Direct Chat</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your New Best Friend</h1>
+            <p>Adopt a pet and give them a loving home. Every pet deserves love.</p>
+            <div class="hero-buttons">
+                <a href="adopt.html" class="btn primary-btn">View Pets <i class="fas fa-paw"></i></a>
+                <a href="about.html" class="btn secondary-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="shelter-puppy.jpg" alt="Puppy waiting for adoption" class="shelter-image">
+        </div>
+    </section>
+
+    <section class="featured-pets">
+        <div class="container">
+            <h2><i class="fas fa-heart"></i> Meet Our Featured Pets</h2>
+            <div class="pets-grid">
+                <div class="pet-card" data-type="dog">
+                    <div class="pet-image">
+                        <img src="pics/dog1.jpg" alt="Dog named Bruno">
+                        <div class="pet-badge">Available</div>
+                    </div>
+                    <div class="pet-info">
+                        <h3 class="pet-name">Bruno</h3>
+                        <p class="pet-details"><i class="fas fa-birthday-cake"></i> 1.5 years old • <i class="fas fa-dog"></i> Indian Street Dog</p>
+                        <p class="pet-description">Friendly and energetic, loves to play with everyone!</p>
+                        <a href="pet-details.html?id=1" class="btn secondary-btn">Meet Bruno <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <div class="pet-image">
+                        <img src="pics/cat2.jpg" alt="Cat named Sona">
+                        <div class="pet-badge">Available</div>
+                    </div>
+                    <div class="pet-info">
+                        <h3 class="pet-name">Sona</h3>
+                        <p class="pet-details"><i class="fas fa-birthday-cake"></i> 2 years old • <i class="fas fa-cat"></i> Indian Short Hair</p>
+                        <p class="pet-description">Graceful and elegant, enjoys peaceful window watching!</p>
+                        <a href="pet-details.html?id=6" class="btn secondary-btn">Meet Sona <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <div class="pet-image">
+                        <img src="pics/cat3.jpg" alt="Cat named Rani">
+                        <div class="pet-badge">Available</div>
+                    </div>
+                    <div class="pet-info">
+                        <h3 class="pet-name">Rani</h3>
+                        <p class="pet-details"><i class="fas fa-birthday-cake"></i> 1 year old • <i class="fas fa-cat"></i> Indian Short Hair</p>
+                        <p class="pet-description">Playful and sweet, brings joy to everyone around her!</p>
+                        <a href="pet-details.html?id=7" class="btn secondary-btn">Meet Rani <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="adopt.html" class="btn primary-btn">View All Pets <i class="fas fa-paw"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2><i class="fas fa-heart"></i> How Adoption Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Find a Pet</h3>
+                    <p>Browse our available pets and find your perfect match.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Apply</h3>
+                    <p>Fill out our adoption application form online or in person.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Meet & Adopt</h3>
+                    <p>Meet your new friend and complete the adoption process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Change a Life?</h2>
+            <p>Hundreds of pets are waiting for their forever homes.</p>
+            <div class="cta-buttons">
+                <a href="adopt.html" class="btn primary-btn">Adopt a Pet <i class="fas fa-paw"></i></a>
+                <a href="donate.html" class="btn secondary-btn">Donate <i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Streeties Logo" class="logo">
+                <p>Helping pets find loving homes since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="adopt.html"><i class="fas fa-paw"></i> Adopt</a></li>
+                    <li><a href="volunteer.html"><i class="fas fa-hands-helping"></i> Volunteer</a></li>
+                    <li><a href="donate.html"><i class="fas fa-heart"></i> Donate</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Pet Street, Animal City</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@streeties.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Streeties | All Rights Reserved</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

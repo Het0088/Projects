@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details - Streeties</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        .pet-details-container {
+            padding: 60px 0;
+        }
+        
+        .pet-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .pet-gallery {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+        
+        .main-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .thumbnail:hover {
+            border-color: #e67e22;
+        }
+        
+        .thumbnail.active {
+            border-color: #e67e22;
+        }
+        
+        .pet-info-detailed {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .pet-status {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .pet-name-header {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .pet-quick-info {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .info-item i {
+            font-size: 1.8rem;
+            color: #e67e22;
+            margin-bottom: 5px;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .pet-description-full {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .pet-characteristics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .characteristic {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .characteristic i {
+            color: #e67e22;
+        }
+        
+        .adoption-cta {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: #e67e22;
+        }
+        
+        .similar-pets {
+            margin: 60px 0;
+        }
+        
+        .similar-pets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .pet-details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .similar-pets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pet-characteristics {
+                grid-template-columns: 1fr;
+            }
+            
+            .similar-pets-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo.png" alt="Streeties Logo" class="logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="adopt.html" class="active">Adopt</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="pet-details-container">
+        <div class="container">
+            <a href="adopt.html" class="btn secondary-btn" style="margin-bottom: 20px;">
+                <i class="fas fa-arrow-left"></i> Back to all pets
+            </a>
+            
+            <div id="pet-details-content">
+                <!-- This will be populated by JavaScript -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i> Loading pet details...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="similar-pets">
+        <div class="container">
+            <h2 class="section-title">Similar Pets You Might Like</h2>
+            <div class="similar-pets-grid" id="similar-pets-container">
+                <!-- Similar pets will be loaded here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Add a New Member to Your Family?</h2>
+            <p>Browse our available pets or contact us with any questions.</p>
+            <div class="cta-buttons">
+                <a href="adopt.html" class="btn primary-btn">See All Pets <i class="fas fa-paw"></i></a>
+                <a href="contact.html" class="btn secondary-btn">Contact Us <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Streeties Logo" class="logo">
+                <p>Helping pets find loving homes since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="adopt.html"><i class="fas fa-paw"></i> Adopt</a></li>
+                    <li><a href="volunteer.html"><i class="fas fa-hands-helping"></i> Volunteer</a></li>
+                    <li><a href="donate.html"><i class="fas fa-heart"></i> Donate</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Pet Street, Animal City</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@streeties.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Streeties | All Rights Reserved</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Sample pet data (in a real application, this would come from a database)
+        const pets = [
+            {
+                id: 1,
+                name: "Bruno",
+                type: "dog",
+                breed: "Indian Street Dog",
+                age: 2,
+                gender: "Male",
+                size: "Medium",
+                color: "Brown",
+                description: "Bruno is a friendly and energetic dog who loves to play and go for walks. He is well-socialized with both humans and other dogs, making him a perfect companion for families. Bruno was rescued from the streets when he was just a puppy and has been living in our shelter for about a year. He's been fully vaccinated and is in excellent health. Bruno is house-trained and knows basic commands like sit, stay, and come. He is looking for an active family who can give him the love and exercise he needs.",
+                characteristics: ["Friendly", "Energetic", "Good with children", "Good with other pets", "House-trained", "Playful"],
+                images: ["pics/dog1.jpg", "pics/dog1-2.jpg", "pics/dog1-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 2,
+                name: "Rocky",
+                type: "dog",
+                breed: "Indian Street Dog",
+                age: 1.5,
+                gender: "Male",
+                size: "Medium",
+                color: "Black & White",
+                description: "Rocky is a smart and adaptable dog who makes a great companion for any family. He's fairly low-maintenance and gets along well with children and other pets. Rocky was found wandering near a highway and brought to our shelter about 6 months ago. He's been vaccinated and neutered, and is in good health. Rocky enjoys going for walks and playing fetch. He's partially house-trained and is quick to learn new things.",
+                characteristics: ["Smart", "Adaptable", "Good with children", "Good with other pets", "Partially house-trained", "Low maintenance"],
+                images: ["pics/dog2.jpg", "pics/dog2-2.jpg", "pics/dog2-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 3,
+                name: "Tiger",
+                type: "dog",
+                breed: "Indian Street Dog",
+                age: 3,
+                gender: "Male",
+                size: "Large",
+                color: "Brown & Black",
+                description: "Tiger is a loyal and protective dog who makes an excellent family guardian. He's alert and watchful, but also affectionate with his family. Tiger was rescued after his previous owner had to relocate and couldn't take him along. He's fully vaccinated and in good health. Tiger is house-trained and responds well to commands. He prefers a home with a yard where he can have some space to move around. Tiger is looking for a family who can give him the love and security he deserves.",
+                characteristics: ["Loyal", "Protective", "Alert", "Affectionate", "House-trained", "Obedient"],
+                images: ["pics/dog3.jpg", "pics/dog3-2.jpg", "pics/dog3-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 4,
+                name: "Moti",
+                type: "dog",
+                breed: "Indian Street Dog",
+                age: 2,
+                gender: "Male",
+                size: "Medium",
+                color: "White & Brown",
+                description: "Moti is a friendly and well-trained dog who makes a perfect family companion. He's gentle, patient, and good with children. Moti was surrendered to our shelter when his previous family had a baby with allergies. He's been vaccinated and neutered, and is in excellent health. Moti is fully house-trained and knows several commands. He enjoys playing with toys and going for walks. Moti is looking for a loving home where he can be a valued family member.",
+                characteristics: ["Friendly", "Well-trained", "Gentle", "Patient", "Good with children", "House-trained"],
+                images: ["pics/dog4.jpg", "pics/dog4-2.jpg", "pics/dog4-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 5,
+                name: "Mira",
+                type: "cat",
+                breed: "Indian Short Hair",
+                age: 1.5,
+                gender: "Female",
+                size: "Small",
+                color: "Grey & White",
+                description: "Mira is a gentle and affectionate cat who loves to cuddle and play with toys. She's quiet and well-behaved, making her a perfect pet for apartment living. Mira was found as a stray kitten and brought to our shelter about a year ago. She's been spayed and vaccinated, and is in good health. Mira is litter-trained and gets along well with other cats. She enjoys sitting by the window and watching birds. Mira is looking for a loving home where she can receive the affection she deserves.",
+                characteristics: ["Gentle", "Affectionate", "Quiet", "Well-behaved", "Litter-trained", "Gets along with other cats"],
+                images: ["pics/cat1.jpg", "pics/cat1-2.jpg", "pics/cat1-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 6,
+                name: "Sona",
+                type: "cat",
+                breed: "Indian Short Hair",
+                age: 2,
+                gender: "Female",
+                size: "Medium",
+                color: "Orange & White",
+                description: "Sona is a graceful and elegant cat who enjoys peaceful window watching. She's independent but also enjoys human company on her own terms. Sona was surrendered to our shelter when her previous owner moved to a pet-free apartment. She's been spayed and vaccinated, and is in excellent health. Sona is litter-trained and keeps herself very clean. She prefers a quiet home without young children or dogs. Sona is looking for a patient owner who understands and respects her need for space.",
+                characteristics: ["Graceful", "Elegant", "Independent", "Peaceful", "Litter-trained", "Clean"],
+                images: ["pics/cat2.jpg", "pics/cat2-2.jpg", "pics/cat2-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 7,
+                name: "Rani",
+                type: "cat",
+                breed: "Indian Short Hair",
+                age: 1,
+                gender: "Female",
+                size: "Small",
+                color: "Calico",
+                description: "Rani is a playful and sweet cat who brings joy to everyone around her. She's energetic and curious, always exploring her surroundings. Rani was found as a stray kitten and brought to our shelter about 6 months ago. She's been spayed and vaccinated, and is in good health. Rani is litter-trained and learns quickly. She enjoys playing with toys and climbing cat trees. Rani is looking for an active home where she can receive plenty of playtime and affection.",
+                characteristics: ["Playful", "Sweet", "Energetic", "Curious", "Litter-trained", "Quick learner"],
+                images: ["pics/cat3.jpg", "pics/cat3-2.jpg", "pics/cat3-3.jpg"],
+                status: "Available"
+            },
+            {
+                id: 8,
+                name: "Maya",
+                type: "cat",
+                breed: "Indian Short Hair",
+                age: 3,
+                gender: "Female",
+                size: "Medium",
+                color: "Black",
+                description: "Maya is a calm and loving cat who is perfect for a peaceful home. She's quiet and undemanding, content to simply be in your presence. Maya was surrendered to our shelter when her previous owner passed away. She's been spayed and vaccinated, and is in good health. Maya is litter-trained and well-behaved. She enjoys sitting on laps and being petted. Maya is looking for a quiet home where she can receive the love and stability she needs.",
+                characteristics: ["Calm", "Loving", "Quiet", "Undemanding", "Litter-trained", "Well-behaved"],
+                images: ["pics/cat4.jpg", "pics/cat4-2.jpg", "pics/cat4-3.jpg"],
+                status: "Available"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get pet ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const petId = parseInt(urlParams.get('id'));
+            
+            if (petId) {
+                // Find the pet with the matching ID
+                const pet = pets.find(p => p.id === petId);
+                
+                if (pet) {
+                    displayPetDetails(pet);
+                    displaySimilarPets(pet);
+                    document.title = `${pet.name} - Streeties Pet Adoption`;
+                } else {
+                    showError("Pet not found");
+                }
+            } else {
+                showError("No pet specified");
+            }
+        });
+
+        function displayPetDetails(pet) {
+            const petDetailsContent = document.getElementById('pet-details-content');
+            
+            // Create pet details HTML
+            const petDetailsHTML = `
+                <div class="pet-details-grid">
+                    <div class="pet-gallery">
+                        <img src="${pet.images[0]}" alt="${pet.name}" class="main-image">
+                    </div>
+                    
+                    <div class="pet-info-detailed">
+                        <div>
+                            <span class="pet-status">${pet.status}</span>
+                            <h1 class="pet-name-header">${pet.name}</h1>
+                            <div class="pet-quick-info">
+                                <div class="info-item">
+                                    <i class="fas fa-paw"></i>
+                                    <span class="info-label">Type</span>
+                                    <span class="info-value">${pet.type.charAt(0).toUpperCase() + pet.type.slice(1)}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <span class="info-label">Age</span>
+                                    <span class="info-value">${pet.age} ${pet.age === 1 ? 'year' : 'years'}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <span class="info-label">Gender</span>
+                                    <span class="info-value">${pet.gender}</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-weight"></i>
+                                    <span class="info-label">Size</span>
+                                    <span class="info-value">${pet.size}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="section-title">About</h2>
+                            <p class="pet-description-full">${pet.description}</p>
+                        </div>
+                        
+                        <div>
+                            <h2 class="section-title">Characteristics</h2>
+                            <div class="pet-characteristics">
+                                ${pet.characteristics.map(trait => 
+                                    `<div class="characteristic">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>${trait}</span>
+                                    </div>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="adoption-cta">
+                            <a href="contact.html?pet=${pet.id}" class="btn primary-btn">Adopt Me <i class="fas fa-heart"></i></a>
+                            <a href="contact.html" class="btn secondary-btn">Ask About Me <i class="fas fa-question-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            petDetailsContent.innerHTML = petDetailsHTML;
+        }
+
+        function displaySimilarPets(currentPet) {
+            const similarPetsContainer = document.getElementById('similar-pets-container');
+            
+            // Find similar pets (same type, different ID)
+            const similarPets = pets
+                .filter(pet => pet.type === currentPet.type && pet.id !== currentPet.id)
+                .slice(0, 3); // Limit to 3 similar pets
+            
+            if (similarPets.length > 0) {
+                const similarPetsHTML = similarPets.map(pet => `
+                    <div class="pet-card">
+                        <div class="pet-image">
+                            <img src="${pet.images[0]}" alt="${pet.name}">
+                            <div class="pet-badge">${pet.status}</div>
+                        </div>
+                        <div class="pet-info">
+                            <h3 class="pet-name">${pet.name}</h3>
+                            <p class="pet-details">
+                                <i class="fas fa-birthday-cake"></i> ${pet.age} ${pet.age === 1 ? 'year' : 'years'} old • 
+                                <i class="fas fa-${pet.type === 'dog' ? 'dog' : 'cat'}"></i> ${pet.breed}
+                            </p>
+                            <p class="pet-description">${pet.description.substring(0, 80)}...</p>
+                            <a href="pet-details.html?id=${pet.id}" class="btn secondary-btn">Meet ${pet.name} <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `).join('');
+                
+                similarPetsContainer.innerHTML = similarPetsHTML;
+            } else {
+                document.querySelector('.similar-pets').style.display = 'none';
+            }
+        }
+
+        function showError(message) {
+            const petDetailsContent = document.getElementById('pet-details-content');
+            petDetailsContent.innerHTML = `
+                <div class="error-message" style="text-align: center; padding: 50px 0;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #e74c3c; margin-bottom: 20px;"></i>
+                    <h2 style="margin-bottom: 10px;">Oops! Something went wrong</h2>
+                    <p>${message}</p>
+                    <a href="adopt.html" class="btn primary-btn" style="margin-top: 20px;">
+                        View All Pets <i class="fas fa-paw"></i>
+                    </a>
+                </div>
+            `;
+            document.querySelector('.similar-pets').style.display = 'none';
+        }
+
+        function changeMainImage(src, thumbnail) {
+            // Update main image
+            document.getElementById('main-pet-image').src = src;
+            
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+    </script>
+</body>
+</html> 
