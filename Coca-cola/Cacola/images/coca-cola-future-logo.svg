@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b8ff" />
+      <stop offset="50%" stop-color="#7000ff" />
+      <stop offset="100%" stop-color="#ff006c" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <g filter="url(#glow)">
+    <path d="M10,25 C10,15 20,10 30,10 C40,10 45,15 45,25 C45,35 40,40 30,40 C20,40 10,35 10,25 Z" fill="none" stroke="url(#logo-gradient)" stroke-width="2" />
+    <path d="M50,10 L60,10 L60,40 L50,40 Z" fill="url(#logo-gradient)" />
+    <path d="M65,10 C65,10 85,10 85,20 C85,30 65,30 65,30" fill="none" stroke="url(#logo-gradient)" stroke-width="2" />
+    <path d="M90,10 L90,40 L100,40 C110,40 110,10 100,10 Z" fill="none" stroke="url(#logo-gradient)" stroke-width="2" />
+    <path d="M115,10 L125,10 L125,40 L115,40 Z" fill="url(#logo-gradient)" />
+    <path d="M130,10 L140,10 L150,40 L140,40 L138,35 L132,35 L130,40 L120,40 Z M134,15 L133,30 L137,30 Z" fill="url(#logo-gradient)" />
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="12" fill="url(#logo-gradient)">FUTURE</text>
+  </g>
+</svg> 

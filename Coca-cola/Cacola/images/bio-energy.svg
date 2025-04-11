@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800">
+  <defs>
+    <linearGradient id="bottle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff8c" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#00b8ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00ff8c" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="liquid-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff8c" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#00ff8c" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Bottle Glow Effect -->
+  <ellipse cx="200" cy="680" rx="120" ry="40" fill="#00ff8c" filter="url(#glow)" opacity="0.3" />
+  
+  <!-- Bottle Base -->
+  <path d="M140,640 C140,680 140,720 200,760 C260,720 260,680 260,640 L140,640 Z" fill="#080808" opacity="0.7" />
+  
+  <!-- Bottle Body -->
+  <path d="M140,200 C120,240 112,320 112,400 C112,480 112,560 140,640 L260,640 C288,560 288,480 288,400 C288,320 280,240 260,200 L140,200 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" filter="url(#soft-glow)" />
+  
+  <!-- Bottle Liquid -->
+  <path d="M140,280 C128,320 120,360 120,400 C120,480 120,560 140,624 L260,624 C280,560 280,480 280,400 C280,360 272,320 260,280 L140,280 Z" fill="url(#liquid-gradient)" opacity="0.5" />
+  
+  <!-- Bottle Neck -->
+  <path d="M168,120 L168,200 L232,200 L232,120 C232,96 216,80 200,80 C184,80 168,96 168,120 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" />
+  
+  <!-- Bottle Cap -->
+  <path d="M168,80 L168,120 L232,120 L232,80 Z" fill="#00ff8c" filter="url(#soft-glow)" />
+  
+  <!-- Bioluminescent Energy Elements -->
+  <g filter="url(#glow)">
+    <!-- Energy Waves -->
+    <path d="M140,380 C160,370 180,365 200,365 C220,365 240,370 260,380" fill="none" stroke="#00ff8c" stroke-width="2" opacity="0.6">
+      <animate attributeName="d" 
+               values="M140,380 C160,370 180,365 200,365 C220,365 240,370 260,380;
+                      M140,370 C160,380 180,385 200,385 C220,385 240,380 260,370;
+                      M140,380 C160,370 180,365 200,365 C220,365 240,370 260,380" 
+               dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M140,420 C160,410 180,405 200,405 C220,405 240,410 260,420" fill="none" stroke="#00ff8c" stroke-width="2" opacity="0.6">
+      <animate attributeName="d" 
+               values="M140,420 C160,410 180,405 200,405 C220,405 240,410 260,420;
+                      M140,410 C160,420 180,425 200,425 C220,425 240,420 260,410;
+                      M140,420 C160,410 180,405 200,405 C220,405 240,410 260,420" 
+               dur="2.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M140,460 C160,450 180,445 200,445 C220,445 240,450 260,460" fill="none" stroke="#00ff8c" stroke-width="2" opacity="0.6">
+      <animate attributeName="d" 
+               values="M140,460 C160,450 180,445 200,445 C220,445 240,450 260,460;
+                      M140,450 C160,460 180,465 200,465 C220,465 240,460 260,450;
+                      M140,460 C160,450 180,445 200,445 C220,445 240,450 260,460" 
+               dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Energy Pulses -->
+  <g filter="url(#soft-glow)">
+    <circle cx="200" cy="400" r="0" fill="#00ff8c" opacity="0.6">
+      <animate attributeName="r" values="0;70;0" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="400" r="0" fill="#00ff8c" opacity="0.4">
+      <animate attributeName="r" values="0;50;0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Bioluminescent Bubbles -->
+  <g filter="url(#soft-glow)">
+    <circle cx="184" cy="560" r="5" fill="#00ff8c" opacity="0.7">
+      <animate attributeName="cy" from="560" to="320" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="520" r="3" fill="#00ff8c" opacity="0.7">
+      <animate attributeName="cy" from="520" to="336" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="208" cy="544" r="4" fill="#00ff8c" opacity="0.7">
+      <animate attributeName="cy" from="544" to="344" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="216" cy="576" r="6" fill="#00ff8c" opacity="0.7">
+      <animate attributeName="cy" from="576" to="328" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- DNA-like Structure -->
+  <g filter="url(#soft-glow)" opacity="0.5">
+    <path d="M175,320 C185,330 215,330 225,320" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,340 C185,330 215,330 225,340" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,360 C185,350 215,350 225,360" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,380 C185,370 215,370 225,380" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,400 C185,390 215,390 225,400" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,420 C185,410 215,410 225,420" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,440 C185,430 215,430 225,440" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,460 C185,450 215,450 225,460" stroke="#00ff8c" stroke-width="1" fill="none" />
+    <path d="M175,480 C185,470 215,470 225,480" stroke="#00ff8c" stroke-width="1" fill="none" />
+    
+    <line x1="175" y1="320" x2="175" y2="480" stroke="#00ff8c" stroke-width="1" />
+    <line x1="225" y1="320" x2="225" y2="480" stroke="#00ff8c" stroke-width="1" />
+    
+    <circle cx="175" cy="320" r="3" fill="#00ff8c" />
+    <circle cx="225" cy="320" r="3" fill="#00ff8c" />
+    <circle cx="175" cy="360" r="3" fill="#00ff8c" />
+    <circle cx="225" cy="360" r="3" fill="#00ff8c" />
+    <circle cx="175" cy="400" r="3" fill="#00ff8c" />
+    <circle cx="225" cy="400" r="3" fill="#00ff8c" />
+    <circle cx="175" cy="440" r="3" fill="#00ff8c" />
+    <circle cx="225" cy="440" r="3" fill="#00ff8c" />
+    <circle cx="175" cy="480" r="3" fill="#00ff8c" />
+    <circle cx="225" cy="480" r="3" fill="#00ff8c" />
+  </g>
+  
+  <!-- Label -->
+  <g>
+    <rect x="144" y="360" width="112" height="80" rx="8" fill="#080808" opacity="0.7" />
+    <text x="200" y="400" font-family="Arial, sans-serif" font-size="20" fill="#00ff8c" text-anchor="middle" filter="url(#soft-glow)">BIO</text>
+    <text x="200" y="424" font-family="Arial, sans-serif" font-size="12" fill="#00ff8c" text-anchor="middle" filter="url(#soft-glow)">ENERGY</text>
+  </g>
+</svg> 

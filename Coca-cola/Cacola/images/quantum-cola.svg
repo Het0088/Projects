@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800">
+  <defs>
+    <linearGradient id="bottle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#7000ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00b8ff" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="liquid-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#00b8ff" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Bottle Glow Effect -->
+  <ellipse cx="200" cy="680" rx="120" ry="40" fill="#00b8ff" filter="url(#glow)" opacity="0.3" />
+  
+  <!-- Bottle Base -->
+  <path d="M140,640 C140,680 140,720 200,760 C260,720 260,680 260,640 L140,640 Z" fill="#080808" opacity="0.7" />
+  
+  <!-- Bottle Body -->
+  <path d="M140,200 C120,240 112,320 112,400 C112,480 112,560 140,640 L260,640 C288,560 288,480 288,400 C288,320 280,240 260,200 L140,200 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" filter="url(#soft-glow)" />
+  
+  <!-- Bottle Liquid -->
+  <path d="M140,280 C128,320 120,360 120,400 C120,480 120,560 140,624 L260,624 C280,560 280,480 280,400 C280,360 272,320 260,280 L140,280 Z" fill="url(#liquid-gradient)" opacity="0.5" />
+  
+  <!-- Bottle Neck -->
+  <path d="M168,120 L168,200 L232,200 L232,120 C232,96 216,80 200,80 C184,80 168,96 168,120 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" />
+  
+  <!-- Bottle Cap -->
+  <path d="M168,80 L168,120 L232,120 L232,80 Z" fill="#00b8ff" filter="url(#soft-glow)" />
+  
+  <!-- Quantum Particle Effects -->
+  <g filter="url(#glow)">
+    <!-- Orbiting Particles -->
+    <circle cx="140" cy="400" r="4" fill="#00b8ff" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 200 400" to="360 200 400" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="260" cy="400" r="3" fill="#7000ff" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="90 200 400" to="450 200 400" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="280" r="5" fill="#00b8ff" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="180 200 400" to="540 200 400" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="520" r="4" fill="#7000ff" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="270 200 400" to="630 200 400" dur="7s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Quantum Field Lines -->
+    <path d="M140,350 C160,370 180,380 200,380 C220,380 240,370 260,350" fill="none" stroke="#00b8ff" stroke-width="1" opacity="0.5">
+      <animate attributeName="d" 
+               values="M140,350 C160,370 180,380 200,380 C220,380 240,370 260,350;
+                      M140,360 C160,350 180,340 200,340 C220,340 240,350 260,360;
+                      M140,350 C160,370 180,380 200,380 C220,380 240,370 260,350" 
+               dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M140,450 C160,430 180,420 200,420 C220,420 240,430 260,450" fill="none" stroke="#00b8ff" stroke-width="1" opacity="0.5">
+      <animate attributeName="d" 
+               values="M140,450 C160,430 180,420 200,420 C220,420 240,430 260,450;
+                      M140,440 C160,450 180,460 200,460 C220,460 240,450 260,440;
+                      M140,450 C160,430 180,420 200,420 C220,420 240,430 260,450" 
+               dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Bubbles -->
+  <g filter="url(#soft-glow)">
+    <circle cx="184" cy="560" r="5" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="560" to="320" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="520" r="3" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="520" to="336" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="208" cy="544" r="4" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="544" to="344" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="216" cy="576" r="6" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="576" to="328" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Label -->
+  <g>
+    <rect x="144" y="360" width="112" height="80" rx="8" fill="#080808" opacity="0.7" />
+    <text x="200" y="400" font-family="Arial, sans-serif" font-size="20" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">QUANTUM</text>
+    <text x="200" y="424" font-family="Arial, sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">COLA</text>
+  </g>
+</svg> 

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Automation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>SmartHome</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#devices"><i class="fas fa-lightbulb"></i> Devices</a></li>
+                <li><a href="#schedules"><i class="fas fa-clock"></i> Schedules</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <span>Welcome, User</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" id="allOff">
+                        <i class="fas fa-power-off"></i>
+                        All Off
+                    </button>
+                    <button class="action-btn" id="movieMode">
+                        <i class="fas fa-film"></i>
+                        Movie Mode
+                    </button>
+                    <button class="action-btn" id="sleepMode">
+                        <i class="fas fa-moon"></i>
+                        Sleep Mode
+                    </button>
+                    <button class="action-btn" id="awayMode">
+                        <i class="fas fa-home"></i>
+                        Away Mode
+                    </button>
+                </div>
+            </section>
+
+            <!-- Devices Grid -->
+            <section class="devices">
+                <h2>Active Devices</h2>
+                <div class="devices-grid" id="devicesGrid">
+                    <!-- Devices will be added here dynamically -->
+                </div>
+            </section>
+
+            <!-- Schedules -->
+            <section class="schedules">
+                <h2>Today's Schedule</h2>
+                <div class="schedule-list" id="scheduleList">
+                    <!-- Schedules will be added here dynamically -->
+                </div>
+            </section>
+
+            <!-- Weather Widget -->
+            <section class="weather-widget">
+                <h2>Weather Insights</h2>
+                <div class="weather-content">
+                    <div class="current-weather">
+                        <div class="weather-icon">
+                            <!-- Icon will be added dynamically -->
+                        </div>
+                        <div class="weather-info">
+                            <div class="temperature">22°C</div>
+                            <div class="condition">Sunny</div>
+                            <div class="location">Vadodara, Gujarat</div>
+                        </div>
+                    </div>
+                    <div class="forecast">
+                        <div class="forecast-day">
+                            <div class="day-name">Mon</div>
+                            <div class="day-icon"><!-- Icon will be added dynamically --></div>
+                            <div class="day-temp">23°C</div>
+                        </div>
+                        <div class="forecast-day">
+                            <div class="day-name">Tue</div>
+                            <div class="day-icon"><!-- Icon will be added dynamically --></div>
+                            <div class="day-temp">21°C</div>
+                        </div>
+                        <div class="forecast-day">
+                            <div class="day-name">Wed</div>
+                            <div class="day-icon"><!-- Icon will be added dynamically --></div>
+                            <div class="day-temp">20°C</div>
+                        </div>
+                        <div class="forecast-day">
+                            <div class="day-name">Thu</div>
+                            <div class="day-icon"><!-- Icon will be added dynamically --></div>
+                            <div class="day-temp">18°C</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Energy Usage -->
+            <section class="energy-usage">
+                <h2>Energy Insights</h2>
+                <div class="energy-content">
+                    <div class="energy-chart-container">
+                        <canvas id="energyChart"></canvas>
+                    </div>
+                    <div class="energy-summary">
+                        <div class="energy-stat">
+                            <div class="stat-value">24.7 kWh</div>
+                            <div class="stat-label">Today's Usage</div>
+                        </div>
+                        <div class="energy-stat">
+                            <div class="stat-value">-12%</div>
+                            <div class="stat-label">vs. Last Week</div>
+                        </div>
+                        <div class="energy-stat">
+                            <div class="stat-value">$3.42</div>
+                            <div class="stat-label">Estimated Cost</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Voice Commands -->
+            <section class="voice-commands">
+                <h2>Voice Assistant</h2>
+                <div class="voice-content">
+                    <div class="voice-button" id="voiceButton">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="voice-status">
+                        <div id="voiceText">Tap to speak</div>
+                        <div id="voiceStatus">Ready</div>
+                    </div>
+                    <div class="voice-examples">
+                        <div class="voice-example">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>"Turn on living room lights"</span>
+                        </div>
+                        <div class="voice-example">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>"Set temperature to 72 degrees"</span>
+                        </div>
+                        <div class="voice-example">
+                            <i class="fas fa-film"></i>
+                            <span>"Activate movie mode"</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- New Scene Creator -->
+            <section class="scene-creator">
+                <h2>Create Custom Scene</h2>
+                <div class="scene-content">
+                    <div class="scene-form">
+                        <div class="form-group">
+                            <label for="sceneName">Scene Name</label>
+                            <input type="text" id="sceneName" placeholder="e.g., Movie Night">
+                        </div>
+                        <div class="device-selectors">
+                            <h3>Select Devices</h3>
+                            <div class="device-selector-grid" id="deviceSelectors">
+                                <!-- Device selectors will be added dynamically -->
+                            </div>
+                        </div>
+                        <button class="create-scene-btn" id="createSceneBtn">
+                            <i class="fas fa-magic"></i> Create Scene
+                        </button>
+                    </div>
+                    <div class="scene-preview">
+                        <h3>Preview</h3>
+                        <div class="preview-content" id="scenePreview">
+                            <div class="preview-placeholder">
+                                <i class="fas fa-eye"></i>
+                                <p>Configure your scene to see a preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Device Modal -->
+    <div id="addDeviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Device</h2>
+            <form id="addDeviceForm">
+                <input type="text" id="deviceName" placeholder="Device Name" required>
+                <select id="deviceType" required>
+                    <option value="light">Light</option>
+                    <option value="thermostat">Thermostat</option>
+                    <option value="camera">Camera</option>
+                    <option value="lock">Lock</option>
+                </select>
+                <button type="submit">Add Device</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/devices.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/schedules.js"></script>
+    <script src="js/cursor-effects.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/advanced-features.js"></script>
+</body>
+</html> 

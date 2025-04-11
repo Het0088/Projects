@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frosty Drink | Premium Refreshment Experience</title>
+  <meta name="description" content="Experience the premium refreshment of Frosty Drink. Immerse yourself in 3D visualization and cutting-edge technology.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loading-content">
+        <h1>FROSTY DRINK</h1>
+        <div class="loading-bar-container">
+          <div class="loading-bar"></div>
+        </div>
+        <p class="loading-text">Loading Experience...</p>
+        <button id="skip-loading" class="skip-button">Skip Loading</button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">FROSTY</div>
+      <ul class="nav-links">
+        <li><a href="#experience"><i class="fas fa-cube"></i> Experience</a></li>
+        <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+        <li><a href="#specifications"><i class="fas fa-list"></i> Specifications</a></li>
+        <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+      </ul>
+      <button class="primary-button cta-button"><i class="fas fa-shopping-cart"></i> Order Now</button>
+    </nav>
+
+    <!-- Hero Section with 3D Model -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>THE FUTURE<br>IS <span class="highlight">FROSTY</span></h1>
+        <p>Experience premium refreshment reimagined for the modern era. Our innovative approach combines cutting-edge technology with exceptional taste for a truly unique sensation.</p>
+        <div class="hero-cta">
+          <button class="primary-button"><i class="fas fa-cube"></i> Explore in 3D</button>
+          <button class="secondary-button"><i class="fas fa-play"></i> Watch Video</button>
+        </div>
+      </div>
+      <div id="drink-model-container"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <h2>REVOLUTIONARY <span class="highlight">FEATURES</span></h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-snowflake"></i></div>
+          <h3>Chill Factor</h3>
+          <p>Stay cool with our unique chilling technology that maintains the perfect temperature for up to 3 hours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-glass-martini-alt"></i></div>
+          <h3>Flavor Explosion</h3>
+          <p>Experience a burst of refreshing flavors in every sip with our time-release flavor capsules.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Eco-Friendly</h3>
+          <p>Our bottles are made from 100% recycled materials and are fully biodegradable after use.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-tint"></i></div>
+          <h3>Hydration+</h3>
+          <p>Enhanced with electrolytes and vitamins for optimal hydration and performance support.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Experience Section -->
+    <section id="experience" class="experience">
+      <div class="experience-content">
+        <h2>IMMERSIVE <span class="highlight">EXPERIENCE</span></h2>
+        <p>Explore every detail of Frosty Drink in our interactive 3D environment. Discover what makes our product truly revolutionary.</p>
+        <div class="controls-hint">
+          <span><i class="fas fa-mouse"></i> Click and drag to rotate</span>
+          <span><i class="fas fa-search-plus"></i> Scroll to zoom</span>
+          <span><i class="fas fa-hand-pointer"></i> Double-click to focus</span>
+        </div>
+      </div>
+      <div id="interactive-drink-container"></div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section id="specifications" class="specifications">
+      <h2>TECHNICAL <span class="highlight">SPECIFICATIONS</span></h2>
+      <div class="specs-container">
+        <div class="spec-category">
+          <h3><i class="fas fa-flask"></i> Ingredients</h3>
+          <ul>
+            <li><span>Water</span><span>Pure and pH balanced</span></li>
+            <li><span>Natural Flavors</span><span>Premium fruit extracts</span></li>
+            <li><span>Sweeteners</span><span>Zero-calorie options</span></li>
+            <li><span>Vitamins</span><span>B-complex & vitamin D</span></li>
+          </ul>
+        </div>
+        <div class="spec-category">
+          <h3><i class="fas fa-box"></i> Packaging</h3>
+          <ul>
+            <li><span>Material</span><span>100% recyclable polymer</span></li>
+            <li><span>Size</span><span>500ml, 750ml, 1L</span></li>
+            <li><span>Design</span><span>Ergonomic grip and seal</span></li>
+            <li><span>Technology</span><span>Temperature indicator</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <h2>GALLERY <span class="highlight">SHOWCASE</span></h2>
+      <div class="gallery-grid">
+        <!-- Gallery images will be added dynamically -->
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="cta-content">
+        <h2>ORDER YOUR <span class="highlight">FROSTY DRINK</span> TODAY</h2>
+        <p>Be among the first to experience the refreshing revolution. Limited initial production run available now.</p>
+        <form class="reservation-form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="tel" placeholder="Phone Number">
+          <button type="submit" class="primary-button"><i class="fas fa-shopping-cart"></i> Secure Your Order</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">FROSTY</div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+              <li><a href="#"><i class="fas fa-briefcase"></i> Careers</a></li>
+              <li><a href="#"><i class="fas fa-newspaper"></i> Press</a></li>
+              <li><a href="#"><i class="fas fa-leaf"></i> Sustainability</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#"><i class="fas fa-tint"></i> Frosty Classic</a></li>
+              <li><a href="#"><i class="fas fa-bolt"></i> Frosty Energy</a></li>
+              <li><a href="#"><i class="fas fa-star"></i> Limited Editions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+              <li><a href="#"><i class="fas fa-map-marker-alt"></i> Locations</a></li>
+              <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Frosty Drink. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

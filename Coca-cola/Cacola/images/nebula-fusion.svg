@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800">
+  <defs>
+    <linearGradient id="bottle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" stop-opacity="0.8" />
+      <stop offset="33%" stop-color="#ff006c" stop-opacity="0.6" />
+      <stop offset="66%" stop-color="#7000ff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#00b8ff" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="liquid-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff006c" stop-opacity="0.8" />
+      <stop offset="33%" stop-color="#7000ff" stop-opacity="0.7" />
+      <stop offset="66%" stop-color="#00b8ff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ff006c" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="nebula-texture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+  
+  <!-- Bottle Glow Effect -->
+  <ellipse cx="200" cy="680" rx="120" ry="40" fill="url(#bottle-gradient)" filter="url(#glow)" opacity="0.3" />
+  
+  <!-- Bottle Base -->
+  <path d="M140,640 C140,680 140,720 200,760 C260,720 260,680 260,640 L140,640 Z" fill="#080808" opacity="0.7" />
+  
+  <!-- Bottle Body -->
+  <path d="M140,200 C120,240 112,320 112,400 C112,480 112,560 140,640 L260,640 C288,560 288,480 288,400 C288,320 280,240 260,200 L140,200 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" filter="url(#soft-glow)" />
+  
+  <!-- Nebula Background -->
+  <clipPath id="bottle-clip">
+    <path d="M140,280 C128,320 120,360 120,400 C120,480 120,560 140,624 L260,624 C280,560 280,480 280,400 C280,360 272,320 260,280 L140,280 Z" />
+  </clipPath>
+  
+  <g clip-path="url(#bottle-clip)">
+    <!-- Nebula Background -->
+    <rect x="120" y="280" width="160" height="344" fill="url(#liquid-gradient)" />
+    
+    <!-- Nebula Clouds -->
+    <g filter="url(#nebula-texture)">
+      <ellipse cx="200" cy="350" rx="60" ry="30" fill="#ff006c" opacity="0.3" />
+      <ellipse cx="170" cy="430" rx="40" ry="50" fill="#7000ff" opacity="0.3" />
+      <ellipse cx="230" cy="500" rx="50" ry="40" fill="#00b8ff" opacity="0.3" />
+      <ellipse cx="190" cy="550" rx="30" ry="20" fill="#ff006c" opacity="0.3" />
+    </g>
+    
+    <!-- Stars -->
+    <g filter="url(#soft-glow)">
+      <circle cx="150" cy="320" r="1" fill="white" opacity="0.8" />
+      <circle cx="180" cy="340" r="1.5" fill="white" opacity="0.7" />
+      <circle cx="210" cy="310" r="1" fill="white" opacity="0.9" />
+      <circle cx="240" cy="330" r="2" fill="white" opacity="0.8" />
+      
+      <circle cx="160" cy="420" r="1.5" fill="white" opacity="0.8" />
+      <circle cx="190" cy="400" r="1" fill="white" opacity="0.7" />
+      <circle cx="220" cy="430" r="2" fill="white" opacity="0.9" />
+      <circle cx="250" cy="410" r="1" fill="white" opacity="0.8" />
+      
+      <circle cx="170" cy="520" r="2" fill="white" opacity="0.8" />
+      <circle cx="200" cy="500" r="1" fill="white" opacity="0.7" />
+      <circle cx="230" cy="530" r="1.5" fill="white" opacity="0.9" />
+      <circle cx="150" cy="510" r="1" fill="white" opacity="0.8" />
+      
+      <circle cx="180" cy="580" r="1" fill="white" opacity="0.8" />
+      <circle cx="210" cy="600" r="1.5" fill="white" opacity="0.7" />
+      <circle cx="240" cy="590" r="1" fill="white" opacity="0.9" />
+    </g>
+    
+    <!-- Color-Shifting Nebula Swirls -->
+    <g filter="url(#glow)" opacity="0.6">
+      <path d="M140,400 C160,380 180,370 200,380 C220,390 240,380 260,400" fill="none" stroke="#ff006c" stroke-width="3" opacity="0.7">
+        <animate attributeName="d" 
+                values="M140,400 C160,380 180,370 200,380 C220,390 240,380 260,400;
+                       M140,390 C160,410 180,420 200,410 C220,400 240,410 260,390;
+                       M140,400 C160,380 180,370 200,380 C220,390 240,380 260,400" 
+                dur="10s" repeatCount="indefinite" />
+        <animate attributeName="stroke" 
+                values="#ff006c;#7000ff;#00b8ff;#ff006c" 
+                dur="8s" repeatCount="indefinite" />
+      </path>
+      
+      <path d="M140,450 C170,470 190,460 210,450 C230,440 250,460 260,450" fill="none" stroke="#7000ff" stroke-width="3" opacity="0.7">
+        <animate attributeName="d" 
+                values="M140,450 C170,470 190,460 210,450 C230,440 250,460 260,450;
+                       M140,460 C170,440 190,450 210,460 C230,470 250,450 260,460;
+                       M140,450 C170,470 190,460 210,450 C230,440 250,460 260,450" 
+                dur="12s" repeatCount="indefinite" />
+        <animate attributeName="stroke" 
+                values="#7000ff;#00b8ff;#ff006c;#7000ff" 
+                dur="9s" repeatCount="indefinite" />
+      </path>
+      
+      <path d="M140,500 C150,480 170,500 200,510 C230,520 250,500 260,500" fill="none" stroke="#00b8ff" stroke-width="3" opacity="0.7">
+        <animate attributeName="d" 
+                values="M140,500 C150,480 170,500 200,510 C230,520 250,500 260,500;
+                       M140,510 C150,530 170,510 200,500 C230,490 250,510 260,510;
+                       M140,500 C150,480 170,500 200,510 C230,520 250,500 260,500" 
+                dur="11s" repeatCount="indefinite" />
+        <animate attributeName="stroke" 
+                values="#00b8ff;#ff006c;#7000ff;#00b8ff" 
+                dur="10s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+  
+  <!-- Bottle Neck -->
+  <path d="M168,120 L168,200 L232,200 L232,120 C232,96 216,80 200,80 C184,80 168,96 168,120 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" />
+  
+  <!-- Bottle Cap -->
+  <path d="M168,80 L168,120 L232,120 L232,80 Z" fill="#7000ff" filter="url(#soft-glow)" />
+  
+  <!-- Label -->
+  <g>
+    <rect x="144" y="360" width="112" height="80" rx="8" fill="#080808" opacity="0.7" />
+    <text x="200" y="390" font-family="Arial, sans-serif" font-size="20" fill="#ff006c" text-anchor="middle" filter="url(#soft-glow)">NEBULA</text>
+    <text x="200" y="414" font-family="Arial, sans-serif" font-size="15" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">FUSION</text>
+    <text x="200" y="430" font-family="Arial, sans-serif" font-size="10" fill="#7000ff" text-anchor="middle" filter="url(#soft-glow)">MULTI-DIMENSIONAL FLAVOR</text>
+  </g>
+</svg> 

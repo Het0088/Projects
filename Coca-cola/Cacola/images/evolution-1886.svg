@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <filter id="sepia" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.393 0.769 0.189 0 0 0.349 0.686 0.168 0 0 0.272 0.534 0.131 0 0 0 0 0 1 0" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#080808" />
+  
+  <!-- Vintage Paper Texture -->
+  <rect width="380" height="280" x="10" y="10" fill="#d2b48c" opacity="0.3" />
+  
+  <!-- Historical Scene - Dr. Pemberton's Lab -->
+  <g filter="url(#sepia)">
+    <!-- Laboratory Setting -->
+    <rect x="50" y="50" width="300" height="200" fill="#8b4513" opacity="0.3" />
+    
+    <!-- Lab Table -->
+    <rect x="70" y="150" width="260" height="20" fill="#8b4513" />
+    <rect x="80" y="170" width="10" height="50" fill="#8b4513" />
+    <rect x="310" y="170" width="10" height="50" fill="#8b4513" />
+    
+    <!-- Lab Equipment -->
+    <!-- Flask -->
+    <path d="M150,150 L140,120 L140,90 C140,85 150,85 150,90 L150,120 Z" fill="#f5deb3" opacity="0.7" />
+    <ellipse cx="145" cy="90" rx="5" ry="3" fill="#f5deb3" opacity="0.7" />
+    
+    <!-- Beaker -->
+    <rect x="180" y="110" width="30" height="40" fill="#f5deb3" opacity="0.6" />
+    <line x1="180" y1="120" x2="210" y2="120" stroke="#000" stroke-width="1" opacity="0.5" />
+    <line x1="180" y1="130" x2="210" y2="130" stroke="#000" stroke-width="1" opacity="0.5" />
+    <line x1="180" y1="140" x2="210" y2="140" stroke="#000" stroke-width="1" opacity="0.5" />
+    
+    <!-- First Coca-Cola Bottle -->
+    <path d="M240,150 L235,100 L235,90 C235,85 255,85 255,90 L255,100 L250,150 Z" fill="#8b4513" opacity="0.8" />
+    <rect x="240" y="85" width="10" height="10" fill="#8b4513" />
+    
+    <!-- Label on Bottle -->
+    <rect x="237" y="110" width="16" height="25" fill="#f5deb3" opacity="0.8" />
+    <text x="245" y="120" font-family="serif" font-size="3" fill="#000" text-anchor="middle">Coca</text>
+    <text x="245" y="125" font-family="serif" font-size="3" fill="#000" text-anchor="middle">Cola</text>
+    <text x="245" y="130" font-family="serif" font-size="3" fill="#000" text-anchor="middle">Syrup</text>
+    
+    <!-- Pemberton Figure (Silhouette) -->
+    <ellipse cx="120" cy="100" rx="20" ry="25" fill="#000" />
+    <rect x="110" y="125" width="20" height="40" fill="#000" />
+    <rect x="105" y="125" width="30" height="10" fill="#000" />
+  </g>
+  
+  <!-- Title with Futuristic Touch -->
+  <g filter="url(#soft-glow)">
+    <text x="200" y="30" font-family="serif" font-size="18" fill="#d2b48c" text-anchor="middle">1886: The Origin</text>
+    <text x="200" y="250" font-family="sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" opacity="0.7">The Beginning of a Global Phenomenon</text>
+  </g>
+  
+  <!-- Futuristic Timeline Element -->
+  <circle cx="30" cy="30" r="15" fill="none" stroke="#00b8ff" stroke-width="2" opacity="0.7" filter="url(#soft-glow)" />
+  <text x="30" y="35" font-family="sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">1886</text>
+</svg> 

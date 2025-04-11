@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800">
+  <defs>
+    <linearGradient id="bottle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="liquid-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#00b8ff" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Bottle Glow Effect -->
+  <ellipse cx="200" cy="680" rx="120" ry="40" fill="#00b8ff" filter="url(#glow)" opacity="0.3" />
+  
+  <!-- Bottle Base -->
+  <path d="M140,640 C140,680 140,720 200,760 C260,720 260,680 260,640 L140,640 Z" fill="#080808" opacity="0.7" />
+  
+  <!-- Bottle Body -->
+  <path d="M140,200 C120,240 112,320 112,400 C112,480 112,560 140,640 L260,640 C288,560 288,480 288,400 C288,320 280,240 260,200 L140,200 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" filter="url(#soft-glow)" />
+  
+  <!-- Bottle Liquid -->
+  <path d="M140,280 C128,320 120,360 120,400 C120,480 120,560 140,624 L260,624 C280,560 280,480 280,400 C280,360 272,320 260,280 L140,280 Z" fill="url(#liquid-gradient)" opacity="0.5" />
+  
+  <!-- Bottle Neck -->
+  <path d="M168,120 L168,200 L232,200 L232,120 C232,96 216,80 200,80 C184,80 168,96 168,120 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="4" opacity="0.7" />
+  
+  <!-- Bottle Cap -->
+  <path d="M168,80 L168,120 L232,120 L232,80 Z" fill="#ffffff" filter="url(#soft-glow)" />
+  
+  <!-- Anti-Gravity Bubbles (Outside the bottle) -->
+  <g filter="url(#glow)">
+    <!-- Floating Bubbles Outside -->
+    <circle cx="100" cy="300" r="10" fill="#00b8ff" opacity="0.4">
+      <animate attributeName="cy" from="300" to="280" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="90" cy="400" r="15" fill="#00b8ff" opacity="0.3">
+      <animate attributeName="cy" from="400" to="380" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="110" cy="500" r="8" fill="#00b8ff" opacity="0.5">
+      <animate attributeName="cy" from="500" to="480" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="300" cy="350" r="12" fill="#00b8ff" opacity="0.4">
+      <animate attributeName="cy" from="350" to="330" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="310" cy="450" r="7" fill="#00b8ff" opacity="0.6">
+      <animate attributeName="cy" from="450" to="430" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="290" cy="550" r="14" fill="#00b8ff" opacity="0.3">
+      <animate attributeName="cy" from="550" to="530" dur="5.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Internal Bubbles (With reversed gravity) -->
+  <g filter="url(#soft-glow)">
+    <circle cx="184" cy="320" r="5" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" from="320" to="560" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="336" r="3" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" from="336" to="520" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="208" cy="344" r="4" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" from="344" to="544" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="216" cy="328" r="6" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" from="328" to="576" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Anti-Gravity Field Lines -->
+  <g filter="url(#soft-glow)" opacity="0.3">
+    <path d="M140,450 C120,450 100,460 80,460" stroke="#00b8ff" stroke-width="1" fill="none">
+      <animate attributeName="d" 
+               values="M140,450 C120,450 100,460 80,460;
+                       M140,450 C120,445 100,455 80,455;
+                       M140,450 C120,450 100,460 80,460" 
+               dur="3s" repeatCount="indefinite" />
+    </path>
+    <path d="M140,400 C120,400 100,410 80,410" stroke="#00b8ff" stroke-width="1" fill="none">
+      <animate attributeName="d" 
+               values="M140,400 C120,400 100,410 80,410;
+                       M140,400 C120,395 100,405 80,405;
+                       M140,400 C120,400 100,410 80,410" 
+               dur="3.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M140,350 C120,350 100,360 80,360" stroke="#00b8ff" stroke-width="1" fill="none">
+      <animate attributeName="d" 
+               values="M140,350 C120,350 100,360 80,360;
+                       M140,350 C120,345 100,355 80,355;
+                       M140,350 C120,350 100,360 80,360" 
+               dur="4s" repeatCount="indefinite" />
+    </path>
+    
+    <path d="M260,450 C280,450 300,460 320,460" stroke="#00b8ff" stroke-width="1" fill="none">
+      <animate attributeName="d" 
+               values="M260,450 C280,450 300,460 320,460;
+                       M260,450 C280,445 300,455 320,455;
+                       M260,450 C280,450 300,460 320,460" 
+               dur="3.2s" repeatCount="indefinite" />
+    </path>
+    <path d="M260,400 C280,400 300,410 320,410" stroke="#00b8ff" stroke-width="1" fill="none">
+      <animate attributeName="d" 
+               values="M260,400 C280,400 300,410 320,410;
+                       M260,400 C280,395 300,405 320,405;
+                       M260,400 C280,400 300,410 320,410" 
+               dur="3.7s" repeatCount="indefinite" />
+    </path>
+    <path d="M260,350 C280,350 300,360 320,360" stroke="#00b8ff" stroke-width="1" fill="none">
+      <animate attributeName="d" 
+               values="M260,350 C280,350 300,360 320,360;
+                       M260,350 C280,345 300,355 320,355;
+                       M260,350 C280,350 300,360 320,360" 
+               dur="4.2s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Label -->
+  <g>
+    <rect x="144" y="360" width="112" height="80" rx="8" fill="#080808" opacity="0.7" />
+    <text x="200" y="390" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" filter="url(#soft-glow)">ZERO</text>
+    <text x="200" y="414" font-family="Arial, sans-serif" font-size="15" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">GRAVITY</text>
+    <text x="200" y="430" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" filter="url(#soft-glow)">ZERO SUGAR</text>
+  </g>
+</svg> 

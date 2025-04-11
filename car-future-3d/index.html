@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS | Future of Automotive Excellence</title>
+  <meta name="description" content="Experience the future of automotive excellence with our revolutionary NEXUS concept car. Immerse yourself in 3D visualization and cutting-edge technology.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loading-content">
+        <h1>NEXUS</h1>
+        <div class="loading-bar-container">
+          <div class="loading-bar"></div>
+        </div>
+        <p class="loading-text">Loading Experience...</p>
+        <button id="skip-loading" class="skip-button">Skip Loading</button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">NEXUS</div>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#specifications">Specifications</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+      <button class="cta-button">Reserve Now</button>
+    </nav>
+
+    <!-- Hero Section with 3D Model -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>THE FUTURE<br>IS <span class="highlight">NEXUS</span></h1>
+        <p>Experience automotive excellence reimagined for the future.</p>
+        <div class="buttons">
+          <button class="primary-button">Explore in 3D</button>
+          <button class="secondary-button">Watch Video</button>
+        </div>
+      </div>
+      <div id="car-model-container"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <h2 class="section-title">REVOLUTIONARY <span class="highlight">FEATURES</span></h2>
+      <p class="section-subtitle">Discover the technology that sets NEXUS apart from conventional vehicles.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">800 KM Range</h3>
+          <p class="feature-description">Industry-leading battery technology with ultra-fast charging capabilities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3 class="feature-title">0-100 in 2.3s</h3>
+          <p class="feature-description">Unprecedented acceleration with our quad-motor electric powertrain.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3 class="feature-title">AI Autopilot</h3>
+          <p class="feature-description">Level 4 autonomous driving with advanced neural network processing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Adaptive Chassis</h3>
+          <p class="feature-description">Smart suspension that adapts to road conditions in milliseconds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Experience Section -->
+    <section id="experience" class="experience">
+      <h2 class="section-title">IMMERSIVE <span class="highlight">EXPERIENCE</span></h2>
+      <p class="section-subtitle">Explore every detail of the NEXUS in our interactive 3D environment.</p>
+      
+      <div class="color-options">
+        <!-- Color options will be added by JavaScript -->
+      </div>
+      
+      <div id="interactive-model-container"></div>
+      
+      <div class="controls-hint">
+        <span>Click and drag to rotate</span>
+        <span>Scroll to zoom</span>
+        <span>Double-click to focus</span>
+      </div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section id="specifications" class="specifications">
+      <h2 class="section-title">TECHNICAL <span class="highlight">SPECIFICATIONS</span></h2>
+      <div class="specs-container">
+        <div class="specs-content">
+          <p>The NEXUS pushes the boundaries of what's possible with cutting-edge engineering and innovative design.</p>
+          
+          <div class="specs-list">
+            <div class="spec-item">
+              <div class="spec-icon">⚡</div>
+              <div class="spec-details">
+                <h3>Electric Powertrain</h3>
+                <p>Quad-motor system delivering 1,200 horsepower with instant torque</p>
+              </div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-icon">🔋</div>
+              <div class="spec-details">
+                <h3>Advanced Battery</h3>
+                <p>150 kWh capacity with 800 km range and ultra-fast charging</p>
+              </div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-icon">🛡️</div>
+              <div class="spec-details">
+                <h3>Safety Systems</h3>
+                <p>360° sensor suite with predictive collision avoidance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="specs-image">
+          <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80" 
+               alt="NEXUS Technical Specifications" 
+               onerror="this.src='https://via.placeholder.com/800x450?text=NEXUS+Technical+Image'">
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <h2 class="section-title">GALLERY</h2>
+      <div class="gallery-grid">
+        <!-- Gallery items will be added dynamically -->
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80" alt="NEXUS Car Gallery Image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=80" alt="NEXUS Car Gallery Image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="NEXUS Car Gallery Image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1514867644123-6385d58d3cd4?auto=format&fit=crop&w=800&q=80" alt="NEXUS Car Gallery Image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="NEXUS Car Gallery Image">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=800&q=80" alt="NEXUS Car Gallery Image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="reservation">
+      <div class="cta-content">
+        <h2 class="section-title">RESERVE YOUR <span class="highlight">NEXUS</span> TODAY</h2>
+        <p>Be among the first to experience the revolution in automotive excellence.</p>
+        <form class="reservation-form">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone Number">
+          </div>
+          <button type="submit" class="form-submit">Secure Your Reservation</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="#">NEXUS Model X</a></li>
+            <li><a href="#">NEXUS Model S</a></li>
+            <li><a href="#">Upcoming Models</a></li>
+            <li><a href="#">Charging</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Service Centers</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">FB</a>
+            <a href="#" class="social-link">IG</a>
+            <a href="#" class="social-link">TW</a>
+            <a href="#" class="social-link">YT</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 NEXUS Automotive. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html> 

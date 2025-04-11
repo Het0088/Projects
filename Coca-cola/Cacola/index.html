@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola - Future Refreshment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+    <div class="loader">
+        <svg class="coca-cola-logo" width="120" height="120" viewBox="0 0 100 100">
+            <path d="M50,10 C27.91,10 10,27.91 10,50 C10,72.09 27.91,90 50,90 C72.09,90 90,72.09 90,50 C90,27.91 72.09,10 50,10 Z" fill="#00b8ff"></path>
+            <path d="M50,20 C33.43,20 20,33.43 20,50 C20,66.57 33.43,80 50,80 C66.57,80 80,66.57 80,50 C80,33.43 66.57,20 50,20 Z" fill="#080808"></path>
+            <path d="M35,40 Q40,35 45,40 Q50,45 55,40 Q60,35 65,40 L65,60 Q60,65 55,60 Q50,55 45,60 Q40,65 35,60 Z" fill="#00b8ff"></path>
+        </svg>
+        <p>Initializing Experience...</p>
+    </div>
+
+    <!-- Login/Signup Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="tab-selector">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="auth-body">
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form active">
+                    <div class="form-group">
+                        <input type="email" id="login-email" placeholder=" " required>
+                        <label for="login-email">Email</label>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" placeholder=" " required>
+                        <label for="login-password">Password</label>
+                        <i class="fas fa-lock"></i>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Login</button>
+                    <div class="social-login">
+                        <p>Or continue with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn google"><i class="fab fa-google"></i></button>
+                            <button type="button" class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                            <button type="button" class="social-btn twitter"><i class="fab fa-twitter"></i></button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" id="signup-name" placeholder=" " required>
+                        <label for="signup-name">Full Name</label>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signup-email" placeholder=" " required>
+                        <label for="signup-email">Email</label>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signup-password" placeholder=" " required>
+                        <label for="signup-password">Password</label>
+                        <i class="fas fa-lock"></i>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signup-confirm" placeholder=" " required>
+                        <label for="signup-confirm">Confirm Password</label>
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="form-options">
+                        <label class="terms">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <!-- Futuristic SVG Logo -->
+                <svg class="futuristic-logo" width="200" height="50" viewBox="0 0 200 50">
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#00b8ff" />
+                            <stop offset="50%" stop-color="#7000ff" />
+                            <stop offset="100%" stop-color="#ff006c" />
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <g filter="url(#glow)">
+                        <path d="M10,25 C10,15 20,10 30,10 C40,10 45,15 45,25 C45,35 40,40 30,40 C20,40 10,35 10,25 Z" fill="none" stroke="url(#logo-gradient)" stroke-width="2" />
+                        <path d="M50,10 L60,10 L60,40 L50,40 Z" fill="url(#logo-gradient)" />
+                        <path d="M65,10 C65,10 85,10 85,20 C85,30 65,30 65,30" fill="none" stroke="url(#logo-gradient)" stroke-width="2" />
+                        <path d="M90,10 L90,40 L100,40 C110,40 110,10 100,10 Z" fill="none" stroke="url(#logo-gradient)" stroke-width="2" />
+                        <path d="M115,10 L125,10 L125,40 L115,40 Z" fill="url(#logo-gradient)" />
+                        <path d="M130,10 L140,10 L150,40 L140,40 L138,35 L132,35 L130,40 L120,40 Z M134,15 L133,30 L137,30 Z" fill="url(#logo-gradient)" />
+                        <text x="160" y="30" font-family="Arial, sans-serif" font-size="12" fill="url(#logo-gradient)">FUTURE</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="nav-toggle">
+                <div class="hamburger"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="loginButton" class="nav-auth-btn login-btn">Login</a></li>
+                <li><a href="#" id="signupButton" class="nav-auth-btn signup-btn">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Future of Refreshment</h1>
+                <p>Experience the next generation of hydration and taste</p>
+                <div class="cta-buttons">
+                    <a href="#products" class="btn primary-btn">Explore Products</a>
+                    <a href="#story" class="btn secondary-btn">Our Journey</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/future-bottle.svg" alt="Futuristic Coca-Cola Bottle" class="floating">
+            </div>
+            <div class="bubbles"></div>
+            <div class="particle-container"></div>
+        </section>
+
+        <section id="products" class="products">
+            <h2>Our Innovations</h2>
+            <p class="section-subtitle">Discover the future of Coca-Cola for every moment</p>
+            
+            <div class="product-slider-container">
+                <div class="product-slider">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/quantum-cola.svg" alt="Quantum Cola">
+                        </div>
+                        <h3>Quantum Cola</h3>
+                        <p>The classic taste reimagined with molecular enhancement technology.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/zero-gravity.svg" alt="Zero Gravity">
+                        </div>
+                        <h3>Zero Gravity</h3>
+                        <p>Zero sugar, zero calories, infinite refreshment with antigravity bubbles.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/bio-energy.svg" alt="Bio Energy">
+                        </div>
+                        <h3>Bio Energy</h3>
+                        <p>Natural energy infusion with adaptive mood-enhancing compounds.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/nebula-fusion.svg" alt="Nebula Fusion">
+                        </div>
+                        <h3>Nebula Fusion</h3>
+                        <p>Multi-dimensional flavor that evolves as you drink, with color-shifting effects.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/quantum-cola.svg" alt="Chrono Refresh">
+                        </div>
+                        <h3>Chrono Refresh</h3>
+                        <p>Time-release formula that adapts to your body clock for optimal refreshment.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/zero-gravity.svg" alt="Neural Boost">
+                        </div>
+                        <h3>Neural Boost</h3>
+                        <p>Enhanced cognitive clarity with brain-wave responsive flavor elements.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/bio-energy.svg" alt="Aqua Spectrum">
+                        </div>
+                        <h3>Aqua Spectrum</h3>
+                        <p>Hydration technology that creates personalized mineral balance for your body.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/nebula-fusion.svg" alt="Mood Catalyst">
+                        </div>
+                        <h3>Mood Catalyst</h3>
+                        <p>Reactive flavor profiles that adjust to complement your emotional state.</p>
+                        <a href="#" class="btn product-btn">Experience</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="story" class="story">
+            <div class="story-content">
+                <h2>Our Evolution</h2>
+                <p class="section-subtitle">From classic refreshment to future innovation</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">1886</div>
+                        <div class="event">
+                            <h3>The Origin</h3>
+                            <p>Dr. John Pemberton creates the first Coca-Cola formula in Atlanta, setting the foundation for a global phenomenon.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1985</div>
+                        <div class="event">
+                            <h3>New Formula</h3>
+                            <p>A pivotal moment in our history with the introduction of a new taste that would reshape our approach to innovation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025</div>
+                        <div class="event">
+                            <h3>Quantum Leap</h3>
+                            <p>Introduction of molecular enhancement technology, revolutionizing the beverage experience with adaptive flavors.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2040</div>
+                        <div class="event">
+                            <h3>Future Vision</h3>
+                            <p>Our commitment to pushing boundaries continues with sensory-integrated hydration and neural-responsive refreshment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="images/evolution.svg" alt="Coca-Cola Evolution">
+            </div>
+        </section>
+
+        <section id="sustainability" class="sustainability">
+            <h2>Future Sustainability</h2>
+            <p class="section-subtitle">Creating a better tomorrow with revolutionary technology</p>
+            
+            <div class="sustainability-cards">
+                <div class="sus-card">
+                    <div class="sus-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>Zero-Impact Production</h3>
+                    <p>Our quantum manufacturing creates zero waste with matter-conversion technology, ensuring 100% material utilization.</p>
+                </div>
+                <div class="sus-card">
+                    <div class="sus-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Hydro Regeneration</h3>
+                    <p>Advanced water purification systems that not only clean but enhance water sources around our facilities.</p>
+                </div>
+                <div class="sus-card">
+                    <div class="sus-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Atmospheric Restoration</h3>
+                    <p>Our packaging actively absorbs carbon from the atmosphere, helping reverse climate change with every purchase.</p>
+                </div>
+            </div>
+            
+            <div class="sustainability-feature">
+                <div class="sustainability-header">
+                    <video autoplay loop muted playsinline>
+                        <source src="videos/sustainability.mp4" type="video/mp4">
+                    </video>
+                    <div class="sustainability-header-overlay"></div>
+                    <div class="sustainability-header-content">
+                        <h3>Earth Positive by 2040</h3>
+                        <p>We're not just aiming for carbon neutral. Our goal is to remove more carbon than we produce, restore more water than we use, and regenerate natural systems.</p>
+                        <a href="#" class="btn primary-btn">Join Our Mission</a>
+                    </div>
+                </div>
+                
+                <div class="sustainability-stats">
+                    <div class="stat-item">
+                        <div class="stat-value counter-number" data-count="100">100</div>
+                        <div class="stat-label">Percent Renewable Energy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value counter-number" data-count="200">200</div>
+                        <div class="stat-label">Million Liters Water Restored</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value counter-number" data-count="75">75</div>
+                        <div class="stat-label">Percent Carbon Reduction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value counter-number" data-count="500">500</div>
+                        <div class="stat-label">Thousand Trees Planted</div>
+                    </div>
+                </div>
+                
+                <div class="sustainability-timeline">
+                    <div class="timeline-header">
+                        <h3>Our Sustainability Journey</h3>
+                        <p>From carbon reduction to regenerative practices, track our journey toward becoming Earth Positive</p>
+                    </div>
+                    
+                    <div class="timeline-steps">
+                        <div class="timeline-step">
+                            <div class="timeline-date">
+                                <span>2025</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Carbon Negative Operations</h4>
+                                <p>Our manufacturing facilities will capture more carbon than they emit through revolutionary atmospheric extraction technology.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-date">
+                                <span>2030</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Water Positive Impact</h4>
+                                <p>We'll return 200% of the water used in our beverages back to nature and communities through advanced water regeneration systems.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-date">
+                                <span>2035</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Zero Waste Packaging</h4>
+                                <p>Our packaging will be made from 100% regenerative materials that naturally decompose and enhance soil health.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-date">
+                                <span>2040</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Earth Positive Achievement</h4>
+                                <p>Complete regenerative business model that enhances planetary systems across our entire value chain.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sustainability-cta">
+                <a href="#" class="btn primary-btn">Explore Our Future Vision</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-form-container">
+                <h2>Connect With Us</h2>
+                <p class="section-subtitle">Join the future of refreshment</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="feedback">Product Feedback</option>
+                            <option value="innovation">Innovation Ideas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Global Innovation Center</h3>
+                    <p>One Coca-Cola Plaza, Atlanta, GA 30313</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Experience Support</h3>
+                    <p>+1 800-GET-FUTURE</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Connect Digitally</h3>
+                    <p>future@cocacola.com</p>
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- New 3D Products Experience Section -->
+        <section id="future-experience" class="future-experience">
+            <h2>Experience Our Future</h2>
+            <p class="section-subtitle">Immerse yourself in the next dimension of refreshment</p>
+            
+            <div class="model-container">
+                <div class="model-wrapper">
+                    <div class="holographic-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                    <div class="bottle-model">
+                        <div class="bottle-neck"></div>
+                        <div class="bottle-body">
+                            <div class="bottle-liquid">
+                                <div class="bubbles-container">
+                                    <div class="bubble b1"></div>
+                                    <div class="bubble b2"></div>
+                                    <div class="bubble b3"></div>
+                                    <div class="bubble b4"></div>
+                                    <div class="bubble b5"></div>
+                                    <div class="bubble b6"></div>
+                                    <div class="bubble b7"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottle-label">
+                            <div class="label-logo"></div>
+                        </div>
+                        <div class="bottle-reflection"></div>
+                    </div>
+                    <div class="model-platform">
+                        <div class="platform-light"></div>
+                    </div>
+                </div>
+                <div class="model-info">
+                    <h3>Quantum-Infused Formula</h3>
+                    <div class="specs-container">
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-atom"></i></div>
+                            <div class="spec-name">Molecular Structure</div>
+                            <div class="spec-bar">
+                                <div class="spec-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-tint"></i></div>
+                            <div class="spec-name">Hydration Index</div>
+                            <div class="spec-bar">
+                                <div class="spec-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="spec-name">Energy Catalyst</div>
+                            <div class="spec-bar">
+                                <div class="spec-progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-icon"><i class="fas fa-brain"></i></div>
+                            <div class="spec-name">Neural Activation</div>
+                            <div class="spec-bar">
+                                <div class="spec-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-actions">
+                        <button class="btn primary-btn rotate-model-btn">Rotate Model</button>
+                        <button class="btn secondary-btn explore-btn">View Formula</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="future-products">
+                <h3>Discover Our Future Products</h3>
+                <div class="product-grid">
+                    <div class="future-product-card">
+                        <div class="product-hologram">
+                            <div class="hologram-content">
+                                <div class="holo-shape"></div>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <h4>Astral Chill</h4>
+                            <p>Temperature-adapting formula that adjusts to your body's needs, staying perfectly chilled in any environment.</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-snowflake"></i> Auto-Cooling</span>
+                                <span><i class="fas fa-fire-alt"></i> Heat Responsive</span>
+                            </div>
+                            <button class="btn product-btn">Coming 2026</button>
+                        </div>
+                    </div>
+                    
+                    <div class="future-product-card">
+                        <div class="product-hologram">
+                            <div class="hologram-content">
+                                <div class="holo-shape"></div>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <h4>Synth Wave</h4>
+                            <p>Music-reactive cola that creates flavor waves matching the rhythm and mood of whatever you're listening to.</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-music"></i> Audio Reactive</span>
+                                <span><i class="fas fa-volume-up"></i> Taste Amplifier</span>
+                            </div>
+                            <button class="btn product-btn">Coming 2025</button>
+                        </div>
+                    </div>
+                    
+                    <div class="future-product-card">
+                        <div class="product-hologram">
+                            <div class="hologram-content">
+                                <div class="holo-shape"></div>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <h4>Chrono Fizz</h4>
+                            <p>Time-release formula that evolves its flavor profile over 24 hours, offering a different experience throughout the day.</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-hourglass-half"></i> Time Shifting</span>
+                                <span><i class="fas fa-sync"></i> Flavor Evolution</span>
+                            </div>
+                            <button class="btn product-btn">Coming 2027</button>
+                        </div>
+                    </div>
+                    
+                    <div class="future-product-card">
+                        <div class="product-hologram">
+                            <div class="hologram-content">
+                                <div class="holo-shape"></div>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <h4>Memory Echo</h4>
+                            <p>Neural-linked beverage that can recreate taste experiences from your memories, triggering nostalgic emotional responses.</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-memory"></i> Memory Extraction</span>
+                                <span><i class="fas fa-heart"></i> Emotional Echo</span>
+                            </div>
+                            <button class="btn product-btn">Coming 2028</button>
+                        </div>
+                    </div>
+                    
+                    <div class="future-product-card">
+                        <div class="product-hologram">
+                            <div class="hologram-content">
+                                <div class="holo-shape"></div>
+                            </div>
+                        </div>
+                        <div class="product-data">
+                            <h4>Quantum Dream</h4>
+                            <p>Sleep-enhancing formula with dream guidance technology that promotes lucid dreaming while helping achieve restorative rest.</p>
+                            <div class="product-specs">
+                                <span><i class="fas fa-moon"></i> Dream Induction</span>
+                                <span><i class="fas fa-bed"></i> Sleep Optimization</span>
+                            </div>
+                            <button class="btn product-btn">Coming 2029</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vision-portal">
+                <div class="portal-frame">
+                    <div class="portal-content">
+                        <h3>Join Our Future Vision</h3>
+                        <p>Be part of our journey to reinvent refreshment for the next century. The Coca-Cola Future Lab is seeking visionaries like you.</p>
+                        <div class="portal-actions">
+                            <a href="#" class="btn primary-btn">Join Future Lab</a>
+                            <a href="#roadmap-section" class="holographic-link">Explore Our Roadmap <i class="fas fa-long-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="portal-effects">
+                        <div class="portal-ring"></div>
+                        <div class="portal-particles"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New 3D Bottle Model Section -->
+        <section id="bottle-model-section" class="bottle-model-section">
+            <div class="section-header">
+                <h2>The Future of Refreshment</h2>
+                <p class="section-subtitle">Explore our revolutionary bottle design with quantum enhancements</p>
+            </div>
+            
+            <div class="bottle-model-container">
+                <div class="holographic-ring ring-1"></div>
+                <div class="holographic-ring ring-2"></div>
+                <div class="holographic-ring ring-3"></div>
+                
+                <div class="bottle-3d">
+                    <div class="bottle-cap"></div>
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-body">
+                        <div class="bottle-liquid">
+                            <div class="bottle-bubbles"></div>
+                        </div>
+                    </div>
+                    <div class="bottle-base"></div>
+                </div>
+                
+                <div class="model-platform"></div>
+                
+                <button class="formula-modal-btn">Explore Formula</button>
+                
+                <div class="model-controls">
+                    <button class="btn primary-btn rotate-toggle"><i class="fas fa-sync-alt"></i> Rotate Bottle</button>
+                    <button class="btn secondary-btn formula-btn">View Formula</button>
+                </div>
+            </div>
+            
+            <div class="bottle-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3>Perfect Temperature</h3>
+                    <p>Self-regulating molecules maintain optimal drinking temperature for up to 4 hours in any environment.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Biometric Response</h3>
+                    <p>The bottle adapts to your unique physiology, enhancing flavor notes you prefer while balancing optimal hydration.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Zero-Impact Material</h3>
+                    <p>Composed of 100% atmospheric carbon, each bottle actively removes CO₂ during its production and biodegrades completely.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coca-Cola Evolution Section -->
+        <section id="evolution-section" class="evolution-section">
+            <div class="evolution-container">
+                <div class="evolution-header">
+                    <h2>Our Evolution Journey</h2>
+                    <p>From our classic beginnings to quantum-enhanced future, explore how Coca-Cola has continuously reinvented refreshment</p>
+                </div>
+                
+                <div class="evolution-timeline">
+                    <div class="timeline-track"></div>
+                    
+                    <div class="timeline-point">
+                        <div class="point-marker">
+                            <div class="point-year">1886</div>
+                        </div>
+                        <div class="point-content">
+                            <h3>Origin of Refreshment</h3>
+                            <p>Dr. John Pemberton creates the first Coca-Cola formula in Atlanta, Georgia. The unique blend of flavors would go on to become the world's most recognized beverage, setting the foundation for over a century of innovation.</p>
+                        </div>
+                        <div class="point-image">
+                            <img src="images/evolution-1886.svg" alt="Original Coca-Cola Formula 1886">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <div class="point-marker">
+                            <div class="point-year">1916</div>
+                        </div>
+                        <div class="point-content">
+                            <h3>The Contour Bottle</h3>
+                            <p>The iconic contour bottle is introduced, creating the distinctive shape that would become synonymous with Coca-Cola worldwide. This design innovation ensured consumers could recognize Coca-Cola by touch alone, even in the dark.</p>
+                        </div>
+                        <div class="point-image">
+                            <img src="images/evolution-1916.svg" alt="Contour Bottle 1916">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <div class="point-marker">
+                            <div class="point-year">1985</div>
+                        </div>
+                        <div class="point-content">
+                            <h3>New Formula Era</h3>
+                            <p>The introduction of a new formula marked a pivotal moment in our history, demonstrating our commitment to innovation. The consumer response reaffirmed the deep connection people had with our classic taste, shaping our approach to product development.</p>
+                        </div>
+                        <div class="point-image">
+                            <img src="images/evolution-1985.svg" alt="New Coke 1985">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <div class="point-marker">
+                            <div class="point-year">2025</div>
+                        </div>
+                        <div class="point-content">
+                            <h3>Quantum Enhancement</h3>
+                            <p>The introduction of molecular enhancement technology revolutionizes the beverage experience. Our quantum-infused formula creates adaptive flavors that respond to individual preferences, marking the beginning of personalized refreshment at the molecular level.</p>
+                        </div>
+                        <div class="point-image">
+                            <img src="images/evolution-2025.svg" alt="Quantum Cola 2025">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-point">
+                        <div class="point-marker">
+                            <div class="point-year">2040</div>
+                        </div>
+                        <div class="point-content">
+                            <h3>Neural Integration</h3>
+                            <p>Our vision for the future includes sensory-integrated hydration and neural-responsive refreshment. These innovations will create a multi-dimensional experience that adapts in real-time to your body's needs and preferences, redefining what a beverage can be.</p>
+                        </div>
+                        <div class="point-image">
+                            <img src="images/evolution-2040.svg" alt="Neural Integration 2040">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="evolution-cta">
+                    <a href="#" class="btn primary-btn cta-btn" target="_blank">Join Our Mission</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Roadmap Section -->
+        <section id="roadmap-section" class="roadmap-section">
+            <div class="roadmap-container">
+                <div class="roadmap-header">
+                    <h2>Future Innovation Roadmap</h2>
+                    <p>Our strategic vision for revolutionizing refreshment over the next decades</p>
+                </div>
+                
+                <div class="roadmap-phases">
+                    <div class="phase-connector"></div>
+                    
+                    <div class="roadmap-phase">
+                        <div class="phase-marker"></div>
+                        <div class="phase-content">
+                            <div class="phase-year">2025-2027</div>
+                            <h3 class="phase-title">Quantum Refreshment</h3>
+                            <p class="phase-description">Introduction of molecular enhancement technology and adaptive flavor profiles.</p>
+                            <div class="phase-goals">
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Quantum-infused formula launch</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Smart packaging integration</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Personalized taste profiles</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-phase">
+                        <div class="phase-marker"></div>
+                        <div class="phase-content">
+                            <div class="phase-year">2028-2032</div>
+                            <h3 class="phase-title">Sensory Evolution</h3>
+                            <p class="phase-description">Multi-sensory beverages that engage sight, sound, and touch alongside taste.</p>
+                            <div class="phase-goals">
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Chromatic flavor technology</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Audio-reactive bubbles</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Tactile refreshment surfaces</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-phase">
+                        <div class="phase-marker"></div>
+                        <div class="phase-content">
+                            <div class="phase-year">2033-2036</div>
+                            <h3 class="phase-title">Environmental Regeneration</h3>
+                            <p class="phase-description">Beverages that actively restore environmental balance through consumption.</p>
+                            <div class="phase-goals">
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Carbon-negative production</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Water-generating packaging</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Biodiversity-enhancing ingredients</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-phase">
+                        <div class="phase-marker"></div>
+                        <div class="phase-content">
+                            <div class="phase-year">2037-2040</div>
+                            <h3 class="phase-title">Neural Integration</h3>
+                            <p class="phase-description">Direct neural interface with beverages for perfect taste perception.</p>
+                            <div class="phase-goals">
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Neural taste amplification</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Memory-linked refreshment</div>
+                                </div>
+                                <div class="phase-goal">
+                                    <div class="goal-icon"><i class="fas fa-check"></i></div>
+                                    <div class="goal-text">Mood-adaptive hydration</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="roadmap-footer">
+                    <a href="#" class="btn primary-btn join-mission-btn">Join Our Mission</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Account Sections -->
+        <div class="account-sections">
+            <!-- My Orders Section -->
+            <section id="my-orders" class="account-section">
+                <div class="section-container">
+                    <h2>My Orders</h2>
+                    <p class="section-subtitle">Track and manage your Coca-Cola experiences</p>
+                    
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div class="order-id">Order #QC-2040-8735</div>
+                                <div class="order-date">June 15, 2040</div>
+                                <div class="order-status delivered">Delivered</div>
+                            </div>
+                            <div class="order-products">
+                                <div class="order-product">
+                                    <div class="product-image">
+                                        <img src="images/quantum-cola.svg" alt="Quantum Cola">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4>Quantum Cola</h4>
+                                        <p>6-pack, Personalized Molecular Enhancement</p>
+                                        <div class="product-price">$24.99</div>
+                                    </div>
+                                </div>
+                                <div class="order-product">
+                                    <div class="product-image">
+                                        <img src="images/zero-gravity.svg" alt="Zero Gravity">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4>Zero Gravity</h4>
+                                        <p>12-pack, Anti-Gravity Bubbles</p>
+                                        <div class="product-price">$32.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-footer">
+                                <div class="order-total">Total: $57.98</div>
+                                <button class="btn secondary-btn">Track Delivery</button>
+                                <button class="btn primary-btn">Reorder</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-item">
+                            <div class="order-header">
+                                <div class="order-id">Order #QC-2040-6542</div>
+                                <div class="order-date">May 22, 2040</div>
+                                <div class="order-status shipped">Shipped</div>
+                            </div>
+                            <div class="order-products">
+                                <div class="order-product">
+                                    <div class="product-image">
+                                        <img src="images/bio-energy.svg" alt="Bio Energy">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4>Bio Energy</h4>
+                                        <p>4-pack, Neural-Response Edition</p>
+                                        <div class="product-price">$19.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-footer">
+                                <div class="order-total">Total: $19.99</div>
+                                <button class="btn secondary-btn">Track Delivery</button>
+                                <button class="btn primary-btn">Reorder</button>
+                            </div>
+                        </div>
+                        
+                        <div class="no-orders-message" style="display: none;">
+                            <div class="message-icon"><i class="fas fa-box-open"></i></div>
+                            <h3>No Orders Yet</h3>
+                            <p>Explore our revolutionary products and place your first order today!</p>
+                            <a href="#products" class="btn primary-btn">Discover Products</a>
+                        </div>
+                    </div>
+                    
+                    <div class="orders-pagination">
+                        <button class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></button>
+                        <div class="pagination-numbers">
+                            <span class="active">1</span>
+                            <span>2</span>
+                        </div>
+                        <button class="pagination-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites" class="account-section">
+                <div class="section-container">
+                    <h2>My Favorites</h2>
+                    <p class="section-subtitle">Your personalized collection of quantum refreshments</p>
+                    
+                    <div class="favorites-grid">
+                        <div class="favorite-item">
+                            <div class="favorite-image">
+                                <img src="images/quantum-cola.svg" alt="Quantum Cola">
+                                <button class="remove-favorite"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="favorite-info">
+                                <h4>Quantum Cola</h4>
+                                <p>Molecular enhancement with adaptive flavor profile</p>
+                                <div class="favorite-price">$4.99</div>
+                                <button class="btn primary-btn add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="favorite-item">
+                            <div class="favorite-image">
+                                <img src="images/nebula-fusion.svg" alt="Nebula Fusion">
+                                <button class="remove-favorite"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="favorite-info">
+                                <h4>Nebula Fusion</h4>
+                                <p>Multi-dimensional flavor with color-shifting effects</p>
+                                <div class="favorite-price">$4.99</div>
+                                <button class="btn primary-btn add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="favorite-item">
+                            <div class="favorite-image">
+                                <img src="images/bio-energy.svg" alt="Bio Energy">
+                                <button class="remove-favorite"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="favorite-info">
+                                <h4>Bio Energy</h4>
+                                <p>Natural energy with mood-enhancing compounds</p>
+                                <div class="favorite-price">$4.49</div>
+                                <button class="btn primary-btn add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="no-favorites-message" style="display: none;">
+                            <div class="message-icon"><i class="fas fa-heart"></i></div>
+                            <h3>No Favorites Yet</h3>
+                            <p>Discover and save your favorite Coca-Cola products for quick access!</p>
+                            <a href="#products" class="btn primary-btn">Explore Products</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="account-section">
+                <div class="section-container">
+                    <h2>Account Settings</h2>
+                    <p class="section-subtitle">Customize your Coca-Cola experience</p>
+                    
+                    <div class="settings-container">
+                        <div class="settings-sidebar">
+                            <div class="settings-nav">
+                                <button class="settings-nav-item active" data-target="profile">Profile</button>
+                                <button class="settings-nav-item" data-target="appearance">Appearance</button>
+                                <button class="settings-nav-item" data-target="security">Security</button>
+                                <button class="settings-nav-item" data-target="preferences">Preferences</button>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-content">
+                            <!-- Profile Settings Panel -->
+                            <div class="settings-panel active" id="profile-panel">
+                                <h3>Profile Information</h3>
+                                <form class="settings-form">
+                                    <div class="form-group">
+                                        <label for="profile-name">Full Name</label>
+                                        <input type="text" id="profile-name" value="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-email">Email Address</label>
+                                        <input type="email" id="profile-email" value="john.doe@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-phone">Phone Number</label>
+                                        <input type="tel" id="profile-phone" value="+1 (555) 123-4567">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profile-birth">Date of Birth</label>
+                                        <input type="date" id="profile-birth" value="1990-01-15">
+                                    </div>
+                                    <button type="submit" class="btn primary-btn">Save Changes</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Appearance Settings Panel -->
+                            <div class="settings-panel" id="appearance-panel">
+                                <h3>Appearance Settings</h3>
+                                <div class="theme-options">
+                                    <div class="setting-section">
+                                        <h4>Theme Mode</h4>
+                                        <div class="theme-selector">
+                                            <div class="theme-option light-theme active">
+                                                <div class="theme-preview light"></div>
+                                                <span>Light</span>
+                                            </div>
+                                            <div class="theme-option dark-theme">
+                                                <div class="theme-preview dark"></div>
+                                                <span>Dark</span>
+                                            </div>
+                                            <div class="theme-option system-theme">
+                                                <div class="theme-preview system"></div>
+                                                <span>System</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="setting-section">
+                                        <h4>Accent Color</h4>
+                                        <div class="color-selector">
+                                            <div class="color-option blue active" data-color="#00b8ff"></div>
+                                            <div class="color-option purple" data-color="#7000ff"></div>
+                                            <div class="color-option pink" data-color="#ff006c"></div>
+                                            <div class="color-option teal" data-color="#00ffcc"></div>
+                                            <div class="color-option orange" data-color="#ff6a00"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="setting-section">
+                                        <h4>Animation Intensity</h4>
+                                        <div class="animation-selector">
+                                            <input type="range" min="0" max="100" value="100" class="animation-slider">
+                                            <div class="animation-level">
+                                                <span>Reduced</span>
+                                                <span>Standard</span>
+                                                <span>Enhanced</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn primary-btn save-appearance">Save Preferences</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Security Settings Panel -->
+                            <div class="settings-panel" id="security-panel">
+                                <h3>Security Settings</h3>
+                                
+                                <div class="setting-section">
+                                    <h4>Change Password</h4>
+                                    <form class="settings-form">
+                                        <div class="form-group">
+                                            <label for="current-password">Current Password</label>
+                                            <input type="password" id="current-password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new-password">New Password</label>
+                                            <input type="password" id="new-password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirm-password">Confirm New Password</label>
+                                            <input type="password" id="confirm-password">
+                                        </div>
+                                        <button type="submit" class="btn secondary-btn">Update Password</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="setting-section">
+                                    <h4>Two-Factor Authentication</h4>
+                                    <div class="two-factor-status">
+                                        <div class="status-indicator">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text">Currently Disabled</span>
+                                        </div>
+                                        <p>Add an extra layer of security to your account with two-factor authentication.</p>
+                                        <button class="btn primary-btn enable-2fa">Enable 2FA</button>
+                                    </div>
+                                    
+                                    <div class="two-factor-setup" style="display: none;">
+                                        <div class="setup-steps">
+                                            <div class="setup-step">
+                                                <div class="step-number">1</div>
+                                                <div class="step-content">
+                                                    <h5>Install an authenticator app</h5>
+                                                    <p>Download an authenticator app like Google Authenticator or Authy.</p>
+                                                </div>
+                                            </div>
+                                            <div class="setup-step">
+                                                <div class="step-number">2</div>
+                                                <div class="step-content">
+                                                    <h5>Scan the QR Code</h5>
+                                                    <div class="qr-container">
+                                                        <img src="images/2fa-qr-placeholder.svg" alt="2FA QR Code">
+                                                    </div>
+                                                    <div class="backup-code">
+                                                        <span>Backup code: </span>
+                                                        <code>COCA-XHDJK-WERTY-FUTUR</code>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="setup-step">
+                                                <div class="step-number">3</div>
+                                                <div class="step-content">
+                                                    <h5>Enter the verification code</h5>
+                                                    <div class="verification-inputs">
+                                                        <input type="text" maxlength="1" class="verification-input">
+                                                        <input type="text" maxlength="1" class="verification-input">
+                                                        <input type="text" maxlength="1" class="verification-input">
+                                                        <input type="text" maxlength="1" class="verification-input">
+                                                        <input type="text" maxlength="1" class="verification-input">
+                                                        <input type="text" maxlength="1" class="verification-input">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="setup-actions">
+                                            <button class="btn secondary-btn cancel-2fa">Cancel</button>
+                                            <button class="btn primary-btn confirm-2fa">Confirm Setup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-section">
+                                    <h4>Login Sessions</h4>
+                                    <div class="sessions-list">
+                                        <div class="session-item">
+                                            <div class="session-device">
+                                                <i class="fas fa-laptop"></i>
+                                                <div class="device-info">
+                                                    <h5>Windows PC - Chrome</h5>
+                                                    <p>Current session</p>
+                                                </div>
+                                            </div>
+                                            <div class="session-details">
+                                                <span>Atlanta, USA</span>
+                                                <span>Last active: Now</span>
+                                            </div>
+                                        </div>
+                                        <div class="session-item">
+                                            <div class="session-device">
+                                                <i class="fas fa-mobile-alt"></i>
+                                                <div class="device-info">
+                                                    <h5>iPhone - Safari</h5>
+                                                    <p>Active session</p>
+                                                </div>
+                                            </div>
+                                            <div class="session-details">
+                                                <span>Atlanta, USA</span>
+                                                <span>Last active: 2 hours ago</span>
+                                                <button class="terminate-session">Sign Out</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn secondary-btn sign-out-all">Sign Out All Devices</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Preferences Settings Panel -->
+                            <div class="settings-panel" id="preferences-panel">
+                                <h3>Preferences Settings</h3>
+                                
+                                <div class="setting-section">
+                                    <h4>Notification Preferences</h4>
+                                    <div class="notification-options">
+                                        <div class="notification-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <div class="option-info">
+                                                <h5>Order Updates</h5>
+                                                <p>Get notifications about your order status and delivery updates</p>
+                                            </div>
+                                        </div>
+                                        <div class="notification-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <div class="option-info">
+                                                <h5>New Products</h5>
+                                                <p>Be the first to know about new Coca-Cola innovations</p>
+                                            </div>
+                                        </div>
+                                        <div class="notification-option">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <div class="option-info">
+                                                <h5>Promotions</h5>
+                                                <p>Receive special offers and discounts</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="setting-section">
+                                    <h4>Flavor Profile</h4>
+                                    <p>Tell us your preferences to enhance your quantum-infused experience</p>
+                                    
+                                    <div class="flavor-sliders">
+                                        <div class="flavor-slider">
+                                            <span>Sweetness</span>
+                                            <input type="range" min="0" max="100" value="60">
+                                        </div>
+                                        <div class="flavor-slider">
+                                            <span>Intensity</span>
+                                            <input type="range" min="0" max="100" value="75">
+                                        </div>
+                                        <div class="flavor-slider">
+                                            <span>Carbonation</span>
+                                            <input type="range" min="0" max="100" value="80">
+                                        </div>
+                                        <div class="flavor-slider">
+                                            <span>Quantum adaptation</span>
+                                            <input type="range" min="0" max="100" value="90">
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn primary-btn">Save Flavor Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/coca-cola-future-logo.svg" alt="Coca-Cola Logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Innovations</h4>
+                    <ul>
+                        <li><a href="#">Quantum Cola</a></li>
+                        <li><a href="#">Zero Gravity</a></li>
+                        <li><a href="#">Bio Energy</a></li>
+                        <li><a href="#">Nebula Fusion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Our Evolution</a></li>
+                        <li><a href="#">Innovation Team</a></li>
+                        <li><a href="#">Future Careers</a></li>
+                        <li><a href="#">Research</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Sustainability</h4>
+                    <ul>
+                        <li><a href="#">Zero-Impact</a></li>
+                        <li><a href="#">Hydro Regeneration</a></li>
+                        <li><a href="#">Atmospheric Restoration</a></li>
+                        <li><a href="#">Future Vision</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Support Portal</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Experience Centers</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2040 The Coca-Cola Company. All Rights Reserved.</p>
+            </div>
+            <div class="legal-links">
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Neural Experience Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

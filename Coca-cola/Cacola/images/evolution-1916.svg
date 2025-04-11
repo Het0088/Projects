@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <filter id="sepia" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.393 0.769 0.189 0 0 0.349 0.686 0.168 0 0 0.272 0.534 0.131 0 0 0 0 0 1 0" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="bottle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b4513" />
+      <stop offset="50%" stop-color="#E50914" />
+      <stop offset="100%" stop-color="#8b4513" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#080808" />
+  
+  <!-- Vintage Paper Texture -->
+  <rect width="380" height="280" x="10" y="10" fill="#d2b48c" opacity="0.3" />
+  
+  <!-- Historical Scene -->
+  <g filter="url(#sepia)">
+    <!-- Factory Setting Background -->
+    <rect x="50" y="50" width="300" height="200" fill="#8b4513" opacity="0.2" />
+    
+    <!-- Conveyor Belt -->
+    <rect x="70" y="150" width="260" height="10" fill="#8b4513" />
+    <rect x="70" y="160" width="260" height="5" fill="#000" opacity="0.5" />
+    
+    <!-- Factory Workers (Silhouettes) -->
+    <ellipse cx="100" cy="120" rx="10" ry="12" fill="#000" />
+    <rect x="95" y="132" width="10" height="20" fill="#000" />
+    <rect x="92" y="132" width="16" height="5" fill="#000" />
+    
+    <ellipse cx="300" cy="120" rx="10" ry="12" fill="#000" />
+    <rect x="295" y="132" width="10" height="20" fill="#000" />
+    <rect x="292" y="132" width="16" height="5" fill="#000" />
+  </g>
+  
+  <!-- The Contour Bottle - Multiple to show production line -->
+  <g>
+    <!-- Bottle 1 -->
+    <path d="M140,150 C135,140 130,130 135,120 C138,115 142,115 145,115 C148,115 152,115 155,120 C160,130 155,140 150,150 C147,160 143,160 145,160 C143,160 137,160 140,150 Z" fill="url(#bottle-gradient)" opacity="0.6" />
+    <ellipse cx="145" cy="115" rx="10" ry="3" fill="url(#bottle-gradient)" opacity="0.6" />
+    
+    <!-- Bottle 2 -->
+    <path d="M190,150 C185,140 180,130 185,120 C188,115 192,115 195,115 C198,115 202,115 205,120 C210,130 205,140 200,150 C197,160 193,160 195,160 C193,160 187,160 190,150 Z" fill="url(#bottle-gradient)" opacity="0.6" />
+    <ellipse cx="195" cy="115" rx="10" ry="3" fill="url(#bottle-gradient)" opacity="0.6" />
+    
+    <!-- Bottle 3 (with futuristic highlight) -->
+    <path d="M240,150 C235,140 230,130 235,120 C238,115 242,115 245,115 C248,115 252,115 255,120 C260,130 255,140 250,150 C247,160 243,160 245,160 C243,160 237,160 240,150 Z" fill="url(#bottle-gradient)" opacity="0.8" filter="url(#soft-glow)" />
+    <ellipse cx="245" cy="115" rx="10" ry="3" fill="url(#bottle-gradient)" opacity="0.8" filter="url(#soft-glow)" />
+    
+    <!-- Coca-Cola Label -->
+    <rect x="235" y="130" width="20" height="15" rx="2" fill="#f5deb3" opacity="0.8" />
+    <text x="245" y="139" font-family="serif" font-size="5" fill="#E50914" text-anchor="middle">Coca</text>
+    <text x="245" y="144" font-family="serif" font-size="5" fill="#E50914" text-anchor="middle">Cola</text>
+  </g>
+  
+  <!-- Patent Drawing Elements -->
+  <g opacity="0.5" transform="translate(320, 80) scale(0.6)">
+    <rect width="100" height="140" fill="#f5deb3" opacity="0.3" />
+    
+    <!-- Patent Drawing of Bottle -->
+    <path d="M50,20 C45,40 40,60 45,80 C48,90 52,90 50,90 C48,90 52,90 55,80 C60,60 55,40 50,20 Z" fill="none" stroke="#000" stroke-width="1" />
+    <ellipse cx="50" cy="20" rx="5" ry="2" stroke="#000" stroke-width="1" fill="none" />
+    
+    <!-- Patent Specification Lines -->
+    <line x1="20" y1="100" x2="80" y2="100" stroke="#000" stroke-width="1" />
+    <line x1="20" y1="110" x2="80" y2="110" stroke="#000" stroke-width="1" />
+    <line x1="20" y1="120" x2="60" y2="120" stroke="#000" stroke-width="1" />
+  </g>
+  
+  <!-- Title with Futuristic Touch -->
+  <g filter="url(#soft-glow)">
+    <text x="200" y="30" font-family="serif" font-size="18" fill="#d2b48c" text-anchor="middle">1916: The Contour Bottle</text>
+    <text x="200" y="250" font-family="sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" opacity="0.7">An Iconic Design Revolution</text>
+  </g>
+  
+  <!-- Futuristic Timeline Element -->
+  <circle cx="30" cy="30" r="15" fill="none" stroke="#00b8ff" stroke-width="2" opacity="0.7" filter="url(#soft-glow)" />
+  <text x="30" y="35" font-family="sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">1916</text>
+</svg> 

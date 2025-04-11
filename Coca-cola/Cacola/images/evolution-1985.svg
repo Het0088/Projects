@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <filter id="retro" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="1.1 0 0 0 0 0 1 0 0 0 0 0 1.1 0 0 0 0 0 1 0" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="can-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E50914" />
+      <stop offset="100%" stop-color="#8B0000" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#080808" />
+  
+  <!-- 80s Style Grid Background -->
+  <g opacity="0.2">
+    <rect x="10" y="10" width="380" height="280" fill="#000" />
+    
+    <!-- Horizontal Grid Lines -->
+    <line x1="10" y1="30" x2="390" y2="30" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="60" x2="390" y2="60" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="90" x2="390" y2="90" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="120" x2="390" y2="120" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="150" x2="390" y2="150" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="180" x2="390" y2="180" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="210" x2="390" y2="210" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="240" x2="390" y2="240" stroke="#f0f" stroke-width="1" />
+    <line x1="10" y1="270" x2="390" y2="270" stroke="#f0f" stroke-width="1" />
+    
+    <!-- Vertical Grid Lines -->
+    <line x1="40" y1="10" x2="40" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="70" y1="10" x2="70" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="100" y1="10" x2="100" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="130" y1="10" x2="130" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="160" y1="10" x2="160" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="190" y1="10" x2="190" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="220" y1="10" x2="220" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="250" y1="10" x2="250" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="280" y1="10" x2="280" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="310" y1="10" x2="310" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="340" y1="10" x2="340" y2="290" stroke="#0ff" stroke-width="1" />
+    <line x1="370" y1="10" x2="370" y2="290" stroke="#0ff" stroke-width="1" />
+  </g>
+  
+  <!-- 1985 New Coke Scene -->
+  <g filter="url(#retro)">
+    <!-- New Coke Can -->
+    <rect x="150" y="80" width="100" height="140" rx="5" fill="url(#can-gradient)" />
+    
+    <!-- White Swoosh -->
+    <path d="M150,130 C180,110 220,110 250,130" fill="none" stroke="#fff" stroke-width="15" />
+    
+    <!-- Can Logo -->
+    <text x="200" y="140" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#fff" text-anchor="middle">Coca</text>
+    <text x="200" y="165" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#fff" text-anchor="middle">Cola</text>
+    
+    <!-- New Formula Label -->
+    <rect x="180" y="90" width="40" height="15" rx="7.5" fill="#fff" />
+    <text x="200" y="102" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#E50914" text-anchor="middle">NEW!</text>
+  </g>
+  
+  <!-- 80s Style Elements -->
+  <g opacity="0.7">
+    <!-- Retro Sun -->
+    <circle cx="320" cy="100" r="30" fill="#ff0" opacity="0.5" />
+    
+    <!-- Retro Shapes -->
+    <rect x="300" y="150" width="40" height="40" fill="#f0f" rx="5" opacity="0.5" />
+    <circle cx="60" cy="120" r="25" fill="#0ff" opacity="0.5" />
+    <polygon points="80,200 50,240 110,240" fill="#0f0" opacity="0.5" />
+  </g>
+  
+  <!-- Title with Futuristic Touch -->
+  <g filter="url(#soft-glow)">
+    <text x="200" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="#fff" text-anchor="middle">1985: New Formula Era</text>
+    <text x="200" y="250" font-family="sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" opacity="0.7">A Pivotal Moment in Coca-Cola History</text>
+  </g>
+  
+  <!-- Futuristic Timeline Element -->
+  <circle cx="30" cy="30" r="15" fill="none" stroke="#00b8ff" stroke-width="2" opacity="0.7" filter="url(#soft-glow)" />
+  <text x="30" y="35" font-family="sans-serif" font-size="12" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">1985</text>
+</svg> 

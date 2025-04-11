@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="1000" viewBox="0 0 500 1000">
+  <defs>
+    <linearGradient id="bottle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#7000ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00b8ff" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="liquid-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#00b8ff" stop-opacity="0.6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Bottle Glow Effect -->
+  <ellipse cx="250" cy="850" rx="150" ry="50" fill="#00b8ff" filter="url(#glow)" opacity="0.3" />
+  
+  <!-- Bottle Base -->
+  <path d="M180,800 C180,850 180,900 250,950 C320,900 320,850 320,800 L180,800 Z" fill="#080808" opacity="0.7" />
+  
+  <!-- Bottle Body -->
+  <path d="M180,250 C150,300 140,400 140,500 C140,600 140,700 180,800 L320,800 C360,700 360,600 360,500 C360,400 350,300 320,250 L180,250 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="5" opacity="0.7" filter="url(#soft-glow)" />
+  
+  <!-- Bottle Liquid -->
+  <path d="M180,350 C160,400 150,450 150,500 C150,600 150,700 180,780 L320,780 C350,700 350,600 350,500 C350,450 340,400 320,350 L180,350 Z" fill="url(#liquid-gradient)" opacity="0.5" />
+  
+  <!-- Bottle Neck -->
+  <path d="M210,150 L210,250 L290,250 L290,150 C290,120 270,100 250,100 C230,100 210,120 210,150 Z" fill="none" stroke="url(#bottle-gradient)" stroke-width="5" opacity="0.7" />
+  
+  <!-- Bottle Cap -->
+  <path d="M210,100 L210,150 L290,150 L290,100 Z" fill="#00b8ff" filter="url(#soft-glow)" />
+  
+  <!-- Holographic Elements -->
+  <g filter="url(#glow)">
+    <circle cx="250" cy="500" r="70" fill="none" stroke="#00b8ff" stroke-width="2" stroke-dasharray="10,5" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 250 500" to="360 250 500" dur="20s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="250" cy="500" r="100" fill="none" stroke="#7000ff" stroke-width="1" stroke-dasharray="5,5" opacity="0.3">
+      <animateTransform attributeName="transform" type="rotate" from="360 250 500" to="0 250 500" dur="30s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Bubbles -->
+  <g filter="url(#soft-glow)">
+    <circle cx="230" cy="700" r="5" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="700" to="400" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="250" cy="650" r="3" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="650" to="420" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="260" cy="680" r="4" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="680" to="430" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="270" cy="720" r="6" fill="#00b8ff" opacity="0.7">
+      <animate attributeName="cy" from="720" to="410" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.7" to="0" dur="4.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Label -->
+  <g>
+    <rect x="180" y="450" width="140" height="100" rx="10" fill="#080808" opacity="0.7" />
+    <text x="250" y="500" font-family="Arial, sans-serif" font-size="24" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">QUANTUM</text>
+    <text x="250" y="530" font-family="Arial, sans-serif" font-size="14" fill="#00b8ff" text-anchor="middle" filter="url(#soft-glow)">COLA</text>
+  </g>
+</svg> 

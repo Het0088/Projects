@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="qr-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b8ff" />
+      <stop offset="100%" stop-color="#7000ff" />
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- QR Code Background -->
+  <rect width="200" height="200" rx="10" fill="#080808" />
+  
+  <!-- QR Code Border -->
+  <rect x="10" y="10" width="180" height="180" rx="5" fill="none" stroke="url(#qr-gradient)" stroke-width="2" filter="url(#glow)" />
+  
+  <!-- QR Code Pattern - Stylized for futuristic look -->
+  <g fill="url(#qr-gradient)">
+    <!-- Position Detection Patterns -->
+    <g>
+      <!-- Top Left -->
+      <rect x="25" y="25" width="30" height="30" rx="2" />
+      <rect x="30" y="30" width="20" height="20" rx="2" fill="#080808" />
+      <rect x="35" y="35" width="10" height="10" rx="2" />
+      
+      <!-- Top Right -->
+      <rect x="145" y="25" width="30" height="30" rx="2" />
+      <rect x="150" y="30" width="20" height="20" rx="2" fill="#080808" />
+      <rect x="155" y="35" width="10" height="10" rx="2" />
+      
+      <!-- Bottom Left -->
+      <rect x="25" y="145" width="30" height="30" rx="2" />
+      <rect x="30" y="150" width="20" height="20" rx="2" fill="#080808" />
+      <rect x="35" y="155" width="10" height="10" rx="2" />
+    </g>
+    
+    <!-- QR Code Data Elements - Random Pattern -->
+    <!-- Row 1 -->
+    <rect x="70" y="25" width="10" height="10" rx="2" />
+    <rect x="90" y="25" width="10" height="10" rx="2" />
+    <rect x="110" y="25" width="10" height="10" rx="2" />
+    
+    <!-- Row 2 -->
+    <rect x="60" y="40" width="10" height="10" rx="2" />
+    <rect x="80" y="40" width="10" height="10" rx="2" />
+    <rect x="100" y="40" width="10" height="10" rx="2" />
+    <rect x="130" y="40" width="10" height="10" rx="2" />
+    
+    <!-- Row 3 -->
+    <rect x="25" y="60" width="10" height="10" rx="2" />
+    <rect x="45" y="60" width="10" height="10" rx="2" />
+    <rect x="70" y="60" width="10" height="10" rx="2" />
+    <rect x="90" y="60" width="10" height="10" rx="2" />
+    <rect x="120" y="60" width="10" height="10" rx="2" />
+    <rect x="145" y="60" width="10" height="10" rx="2" />
+    
+    <!-- Row 4 -->
+    <rect x="35" y="75" width="10" height="10" rx="2" />
+    <rect x="65" y="75" width="10" height="10" rx="2" />
+    <rect x="95" y="75" width="10" height="10" rx="2" />
+    <rect x="115" y="75" width="10" height="10" rx="2" />
+    <rect x="135" y="75" width="10" height="10" rx="2" />
+    
+    <!-- Row 5 -->
+    <rect x="25" y="90" width="10" height="10" rx="2" />
+    <rect x="55" y="90" width="10" height="10" rx="2" />
+    <rect x="85" y="90" width="10" height="10" rx="2" />
+    <rect x="105" y="90" width="10" height="10" rx="2" />
+    <rect x="125" y="90" width="10" height="10" rx="2" />
+    <rect x="165" y="90" width="10" height="10" rx="2" />
+    
+    <!-- Row 6 -->
+    <rect x="45" y="105" width="10" height="10" rx="2" />
+    <rect x="75" y="105" width="10" height="10" rx="2" />
+    <rect x="115" y="105" width="10" height="10" rx="2" />
+    <rect x="145" y="105" width="10" height="10" rx="2" />
+    
+    <!-- Row 7 -->
+    <rect x="35" y="120" width="10" height="10" rx="2" />
+    <rect x="65" y="120" width="10" height="10" rx="2" />
+    <rect x="85" y="120" width="10" height="10" rx="2" />
+    <rect x="105" y="120" width="10" height="10" rx="2" />
+    <rect x="135" y="120" width="10" height="10" rx="2" />
+    <rect x="155" y="120" width="10" height="10" rx="2" />
+    
+    <!-- Row 8 -->
+    <rect x="65" y="135" width="10" height="10" rx="2" />
+    <rect x="95" y="135" width="10" height="10" rx="2" />
+    <rect x="115" y="135" width="10" height="10" rx="2" />
+    
+    <!-- Row 9 -->
+    <rect x="70" y="150" width="10" height="10" rx="2" />
+    <rect x="90" y="150" width="10" height="10" rx="2" />
+    <rect x="110" y="150" width="10" height="10" rx="2" />
+    <rect x="130" y="150" width="10" height="10" rx="2" />
+    <rect x="150" y="150" width="10" height="10" rx="2" />
+  </g>
+  
+  <!-- Coca-Cola Logo in Center -->
+  <g transform="translate(100, 100) scale(0.5)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="20" fill="#080808" />
+    <path d="M-10,-3 Q0,-8 10,-3 Q15,0 10,3 Q0,8 -10,3 Q-15,0 -10,-3 Z" fill="url(#qr-gradient)" />
+  </g>
+  
+  <!-- Text at bottom -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="10" fill="url(#qr-gradient)" text-anchor="middle" filter="url(#glow)">SCAN WITH AUTHENTICATOR APP</text>
+</svg> 
