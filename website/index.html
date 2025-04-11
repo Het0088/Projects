@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-building"></i>
+                <h1>Billing Portal</h1>
+            </div>
+            <div class="user-info">
+                <a href="login.php" class="login-link">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+                <a href="register.php" class="register-link">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Register</span>
+                </a>
+            </div>
+        </header>
+        
+        <main>
+            <h2 class="title">Document Management</h2>
+            <p class="subtitle">Select the document type you want to access</p>
+            
+            <div class="buttons">
+                <button class="btn bill-btn">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Bill</span>
+                </button>
+                <button class="btn challan-btn">
+                    <i class="fas fa-receipt"></i>
+                    <span>Challan</span>
+                </button>
+            </div>
+            
+            <!-- Shop Selection Modal -->
+            <div id="shopModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-shop-btn">&times;</span>
+                    <h3><i class="fas fa-store-alt"></i> Select Shop Location</h3>
+                    <p class="modal-subtitle">Choose a shop to manage its bills</p>
+                    <div class="shop-buttons">
+                        <a href="bill.html?shop=1" class="shop-btn">
+                            <i class="fas fa-store"></i>
+                            <div class="shop-details">
+                                <span class="shop-name">Shop No. 1</span>
+                                <span class="shop-subtitle">123-456-7890 | Main Branch</span>
+                            </div>
+                            <span class="shop-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </a>
+                        <a href="bill.html?shop=2" class="shop-btn">
+                            <i class="fas fa-store"></i>
+                            <div class="shop-details">
+                                <span class="shop-name">Shop No. 2</span>
+                                <span class="shop-subtitle">234-567-8901 | City Center</span>
+                            </div>
+                            <span class="shop-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </a>
+                        <a href="bill.html?shop=3" class="shop-btn">
+                            <i class="fas fa-store"></i>
+                            <div class="shop-details">
+                                <span class="shop-name">Shop No. 3</span>
+                                <span class="shop-subtitle">345-678-9012 | South Point</span>
+                            </div>
+                            <span class="shop-arrow"><i class="fas fa-chevron-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Kalarbrambh. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Help</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="test_db_connection.php" title="Check Database Status">DB Status</a>
+                <a href="login.php" title="Login to your account">Login</a>
+                <a href="register.php" title="Create a new account">Register</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
