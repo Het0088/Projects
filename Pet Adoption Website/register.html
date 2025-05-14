@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Streeties</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #e67e22;
+            outline: none;
+        }
+
+        .auth-btn {
+            background-color: #e67e22;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-btn:hover {
+            background-color: #d35400;
+        }
+
+        .auth-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .auth-links a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-login .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .social-login .divider::before,
+        .social-login .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .social-login .divider span {
+            padding: 0 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #f8f8f8;
+            border-color: #d1d1d1;
+        }
+
+        .error-message {
+            background-color: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #b91c1c;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .password-requirements {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 3px 0;
+        }
+
+        .requirement i {
+            font-size: 0.8rem;
+        }
+
+        .requirement.valid {
+            color: #22c55e;
+        }
+
+        .requirement.invalid {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo.png" alt="Streeties Logo" class="logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="adopt.html">Adopt</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <img src="logo.png" alt="Streeties Logo">
+            <h2>Create an Account</h2>
+        </div>
+        
+        <div class="error-message" id="error-message"></div>
+
+        <form class="auth-form" id="register-form" action="register.php" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="password-requirements">
+                    <div class="requirement" data-requirement="length">
+                        <i class="fas fa-circle"></i> At least 8 characters
+                    </div>
+                    <div class="requirement" data-requirement="uppercase">
+                        <i class="fas fa-circle"></i> One uppercase letter
+                    </div>
+                    <div class="requirement" data-requirement="lowercase">
+                        <i class="fas fa-circle"></i> One lowercase letter
+                    </div>
+                    <div class="requirement" data-requirement="number">
+                        <i class="fas fa-circle"></i> One number
+                    </div>
+                    <div class="requirement" data-requirement="special">
+                        <i class="fas fa-circle"></i> One special character
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            
+            <button type="submit" class="auth-btn">Create Account</button>
+        </form>
+
+        <div class="auth-links">
+            <p>Already have an account? <a href="login.html">Log In</a></p>
+        </div>
+
+        <div class="social-login">
+            <div class="divider">
+                <span>Or sign up with</span>
+            </div>
+            <div class="social-buttons">
+                <button class="social-btn" onclick="socialSignup('google')">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button class="social-btn" onclick="socialSignup('facebook')">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Streeties Logo" class="logo">
+                <p>Helping pets find loving homes since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="adopt.html"><i class="fas fa-paw"></i> Adopt</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Pet Street, Animal City</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@streeties.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Streeties | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        const requirements = document.querySelectorAll('.requirement');
+        const errorMessage = document.getElementById('error-message');
+
+        password.addEventListener('input', validatePassword);
+        
+        function validatePassword() {
+            const value = password.value;
+            
+            // Check requirements
+            const checks = {
+                length: value.length >= 8,
+                uppercase: /[A-Z]/.test(value),
+                lowercase: /[a-z]/.test(value),
+                number: /[0-9]/.test(value),
+                special: /[!@#$%^&*]/.test(value)
+            };
+            
+            requirements.forEach(req => {
+                const type = req.dataset.requirement;
+                if (checks[type]) {
+                    req.classList.add('valid');
+                    req.classList.remove('invalid');
+                    req.querySelector('i').className = 'fas fa-check-circle';
+                } else {
+                    req.classList.remove('valid');
+                    req.classList.add('invalid');
+                    req.querySelector('i').className = 'fas fa-circle';
+                }
+            });
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate passwords match
+            if (password.value !== confirmPassword.value) {
+                showError('Passwords do not match');
+                return;
+            }
+
+            // Validate password requirements
+            const value = password.value;
+            if (!(value.length >= 8 && 
+                /[A-Z]/.test(value) && 
+                /[a-z]/.test(value) && 
+                /[0-9]/.test(value) && 
+                /[!@#$%^&*]/.test(value))) {
+                showError('Password does not meet all requirements');
+                return;
+            }
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: password.value
+            };
+            
+            try {
+                const response = await fetch('register.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Registration successful
+                    window.location.href = 'login.html?registered=true';
+                } else {
+                    showError(data.message || 'Registration failed');
+                }
+            } catch (error) {
+                showError('An error occurred. Please try again.');
+                console.error('Error:', error);
+            }
+        });
+
+        function socialSignup(provider) {
+            // Implement social signup logic here
+            alert('Social signup with ' + provider + ' will be implemented soon!');
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Live Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Live Chat</h2>
+        <div id="chat-box"></div>
+        
+        <input type="text" id="username" placeholder="Enter your name">
+        <input type="text" id="message" placeholder="Type a message..." autocomplete="off">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        var socket = io.connect("http://127.0.0.1:5000");
+
+        function sendMessage() {
+            var username = document.getElementById("username").value;
+            var message = document.getElementById("message").value;
+
+            if (username.trim() === "" || message.trim() === "") return;
+            
+            socket.send({ "sender": username, "text": message });
+            document.getElementById("message").value = "";
+        }
+
+        socket.on("message", function(data) {
+            var chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += "<p><strong>" + data.sender + ":</strong> " + data.text + "</p>";
+        });
+    </script>
+</body>
+</html>
